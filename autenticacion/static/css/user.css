@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Libre Franklin", sans-serif;
+}
+
+body{
+    background: black;
+    color: azure;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 30px 12%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    transition: all ease .55s;
+}
+
+.navlist{
+    display: flex;
+}
+
+.navlist a{
+    font-size: 15px;
+    font-weight: 400;
+    color: bisque;
+    margin: 0 30px;
+    transition: al ease .55s;
+}
+
+.navlist a:hover{
+    color: plum;
+}
+
+.logo img{
+    width: 15%;
+    height: auto;
+}
+
+.h-right{
+    display: flex;
+    align-items: center;
+}
+
+.h-right a{
+    margin-right: 30px;
+    font-size: 17px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: thistle;
+    transition: all ease .55s;
+}
+
+.h-right a:hover{
+    color: aliceblue;
+}
+
+#menu-icon{
+    font-size: 37px;
+    color: antiquewhite;
+    z-index: 10001;
+    cursor: pointer;
+}
+
+section{
+    padding: 0 12%;
+}
+
+.home{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: url(../imgs/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    gap: 30px;
+    overflow-x: hidden;
+}
+
+.home-img img{
+    width: 100%;
+    height: auto;
+}
+
+.home-text span{
+    padding: 11px 18px;
+    background: #d8bfd8;
+    border-radius: 10px;
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.home-text h1{
+    font-size: 65px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 22px 0;
+}
+
+.home-text p{
+    width: 100%;
+    max-width: 400px;
+    font-size: 15px;
+    font-weight: 400;
+    color: whitesmoke;
+    line-height: 30px;
+    margin-bottom: 35px;
+}
+
+.home-text i{
+    height: 45px;
+    width: 45px;
+    background: thistle;
+    color: black;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    border-radius: 12px;
+    margin-right: 18px;
+    margin-bottom: 50px;
+    transition: all ease .55s;
+}
+
+.home-text i:hover{
+    background: lightcoral;
+    color: whitesmoke;
+    transform: scale(1.09);
+}
+
+.btn{
+    display: inline-block;
+    padding: 15px 22px;
+    color: black;
+    background: thistle;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    word-spacing: 5px;
+    transition: all ease .55s;
+}
+
+.btn:hover{
+    border: 1px solid thistle;
+    background: transparent;
+    color: rgb(165, 157, 165);
+}
+
+.btn22{
+    color: thistle;
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 25px;
+    text-transform: uppercase;
+    word-spacing: 5px;
+    transition: all ease .55s;
+}
+
+.btn22:hover{
+    color: whitesmoke;
+}
+
+.social{
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    transform: translateY(-50%);
+}
+
+.social a{
+    display: flex;
+    align-items: center;
+    color: thistle;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all ease .55s;
+}
+
+.social img{
+    margin-right: 5px;
+    width: 22px;
+    height: auto;
+    color: azure;
+}
+
+.social a:hover{
+    transform: translateY(-4px) scale(1.08);
+}
+
+/* Servicios*/
+
+.servicio{
+    background-image: url(../imgs/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    padding: 100px 0px;
+}
+
+.titulo h2{
+    color: rgb(255, 255, 255);
+    font-size: 75px;
+    width: 1130px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.card{
+    height: 365px;
+    width: 335px;
+    padding: 20px 35px;
+    background: thistle;
+    border-radius: 20px;
+    margin: 15px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.card i{
+    font-size: 50px;
+    display: block;
+    text-align: center;
+    margin: 25px 0px;
+    color: rgb(0, 0, 0);
+}
+
+h5{
+    color: black;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.res p{
+    color: black;
+    font-size: 16px;
+    line-height: 27px;
+    margin-bottom: 25px;
+}
+
+.card a{
+    background-color: palevioletred;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 22px;
+    border-radius: 25px;
+    transition: .4s;
+}
+
+.card a:hover{
+    background-color: transparent;
+    color: black;
+    border: 2px solid #032203;
+    cursor: pointer;
+}
+
+@media (max-width: 1610px){
+    :root{
+        --h1-font: 4.2rem;
+    }
+    .home-img{
+        height: 600px;
+        width: 600px;
+    }
+    .home-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+@media(max-width: 1490px){
+    :root{
+        --h1-font: 3rem;
+    }
+    .home-img{
+        height: 500px;
+        width: 500px;
+    }
+}
+
+@media(max-width: 1180px){
+    .social{
+        display: none;
+    }
+    section{
+        padding: 70px 7%;
+    }
+    .home{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    .home-text{
+        order: 2;
+        width: 100%;
+    }
+    .home-text p{
+        width: 100%;
+        max-width: 800px;
+    }
+    .home-img{
+        height: 420px;
+        width: 420px;
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 950px) {
+    .navlist a{
+        margin: 0 15px;
+    }
+}
+@media (max-width: 780px){
+    header{
+        padding: 13px;
+    }
+    section{
+        padding: 60px 5%;
+    }
+    #menu-icon{
+        display: block;
+        font-size: 43px;
+    }
+    .navlist{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        padding: 70px 50px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 100%;
+        display: flex;
+        flex-direction: column;
+        backdrop-filter: blur(32px);
+        transition: all 0.5s ease-in-out;
+    }
+    .navlist a{
+        display: block;
+        padding: 0;
+        margin: 0px 0px 22px 0px;
+        font-size: 2rem;
+    }
+    .navlist.open{
+        left: 0;
+    }
+}
+
+@media (max-width: 530px){
+    :root{
+        --h1-font: 2.3rem;
+    }
+    .home-img{
+        height: 400px;
+        width: 400px;
+        margin: 10px auto;
+    }
+}

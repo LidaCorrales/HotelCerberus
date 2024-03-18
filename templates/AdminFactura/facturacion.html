@@ -1,0 +1,50 @@
+{% extends "../base.html" %}
+
+{% load static %}
+
+{% block title %} Facturas {% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-dismissible alert-success">
+            <button type="button" class="clase" data-dismiss="alert">&times;</button>
+            <strong class="text-dark">{{ message}}</strong>
+        </div>
+        {% endfor %}
+        {% endif %}
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
+        <h1>Lista de Facturas</h1>
+        <div class="table-responsive py-2">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id de factura</th>
+                        <th>Id de reserva</th>
+                        <th>Fecha de proceso</th>
+                        <th>Estado</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for a in factura_lista %}
+                    <tr>
+                        <td>{{a.id_factura}}</td>
+                        <td>{{a.reserva.id_reserva}}</td>
+                        <td>{{a.fecha_emitida}}</td>
+                        <td>{{a.estado}}</td>
+                        <td>{{a.total}}</td>
+                        <td><a href="edicionFactura/{{a.id_factura}}" class="btn btn-info">Editar</a></td>
+                        <td><a href="eliminarFactura/{{a.id_factura}}" class="btn btn-danger">Eliminar</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

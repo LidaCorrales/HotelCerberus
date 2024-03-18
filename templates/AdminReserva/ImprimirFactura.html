@@ -1,0 +1,21 @@
+{% extends "../base.html" %}
+
+{% load static %}
+
+{% block title %} Imprimir Factura {% endblock %}
+
+{% block body %}
+
+<div class="contenido">
+    <h2 style="text-align: center;">¿Desea imprimir factura?</h2>
+    <div class="botones">
+        <a href="{% url 'ImprimiendoFactura' id_reserva=id_reserva %}">
+            <button class="boton">Si</button>
+        </a>
+        <a href="{% url 'MisReservas' %}">
+            <button class="boton">No</button>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

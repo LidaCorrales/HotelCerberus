@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="{% static 'imgs/logo.png' %}">
+    <title>Hotel</title>
+    <link rel="stylesheet" type="text/css" href={% static 'css/index.css' %}>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>  
+    <!--- header -->
+    <header>
+        <a href={% url 'paginadmin' %} class="logo">
+            <img src={% static 'imgs/logo.png' %}>
+        </a>
+    <!--- nav -->
+        <ul class="navlist">
+            <li><a href="#">Inicio</a></li>
+            <li><a href={% url 'UsuarioIndex' %}>Usuarios</a></li>
+            <li><a href={% url 'Habitacion' %}>Habitaciones</a></li>
+            <li><a href="{% url 'logout' %}">Cerrar Sesión</a><li>
+        </ul>
+
+        <span> Bienvenido Administrador {{request.user}} :D</span>
+
+        <div class="h-right">
+            <a href="#">Contactenos</a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
+    <!--- section -->
+    <section class="home">
+        <div class="home-text">
+            <span>Hotel Cerberus</span>
+            <h1>Pagina de administradores :D</h1>
+            <p>Administracion de habitaciones, reservas y servicios</p>
+
+            <div class="icons">
+                <a href=""><i class="ri-microsoft-fill"></i></a>
+                <a href=""><i class="ri-apple-fill"></i></a>
+                <a href=""><i class="ri-twitter-fill"></i></a>
+                <a href=""><i class="ri-facebook-fill"></i></a>
+                <a href=""><i class="ri-instagram-line"></i></a>
+            </div>
+
+            <div class="main-btnn">
+                <a href={% url 'reservas' %} class="btn">Reservaciones</a>
+                <a href={% url 'facturaVista' %} class="btn22">Facturación</a>
+                <a href={% url 'DfacturaVista' %} class="btn22">Servicios Adicionales</a>
+            </div>
+        </div>
+
+        <div class="home-img">
+            <img src={% static 'imgs/mainn.png' %}>
+        </div>
+    </section>
+
+        <!--Servicios-->
+        <div class="servicio">
+            <div class="titulo">
+                <h2>Servicios</h2>
+            </div>
+            <div class="box">
+                <div class="card">
+                    <i class="fa-solid fa-utensils"></i>
+                    <h5>Restaurante</h5>
+                    <div class="res">
+                        <p>Ingresar al servicio <br>
+                            Restaurante
+                        </p>
+                        <p style="text-align: center;">
+                            <a href={% url 'IndexRes' %}>Ingresar</a>
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <i class="fa-solid fa-wine-bottle"></i>
+                    <h5>Bar</h5>
+                    <div class="res">
+                        <p>Ingresar al servicio <br>
+                            Bar
+                        </p>
+                        <p style="text-align: center;">
+                            <a href={% url 'IndexBar' %}>Ingresar</a>
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <i class="fa-solid fa-spa"></i>
+                    <h5>SPA</h5>
+                    <div class="res">
+                        <p>Ingresar al servicio <br>
+                            Zonas Humedas
+                        <p style="text-align: center;">
+                            <a href={% url 'IndexZH' %}>Ingresar</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

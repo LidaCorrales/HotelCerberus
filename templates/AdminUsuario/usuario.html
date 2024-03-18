@@ -1,0 +1,118 @@
+{% extends "../base.html" %}
+
+{% load static %}
+
+{% block title %} Usuarios {% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-dismissible alert-success">
+            <button type="button" class="clase" data-dismiss="alert">&times;</button>
+            <strong class="text-dark">{{ message}}</strong>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <h2>Usuarios</h2>
+        <div class="card">
+            <div class="card-body">
+                <form method="POST" action="{% url 'registroUsuario' %}">
+                    {% csrf_token %}
+					<div class="form-group py-2">
+                        <label for="username">Nombre de Usuario:</label>
+                        <input type="text" id="username" name="username" class="form-control" >
+                    </div>
+                    {{form.username}}
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Tipo de documento</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01" name="idTipo">
+                            <option selected>Seleccione</option>
+                            <option value="1">Cedula de Ciudadania</option>
+                            <option value="2">Tarjeta de Identidad</option>
+                            <option value="3">Cedula de Extranjeria</option>
+                            <option value="4">Pasaporte</option>
+                        </select>
+                    </div>	
+                    <div class="form-group py-2">
+                        <label for="numdoc">Numero de Documento: </label>
+                        <input type="number" id="numdoc" name="numdoc" class="form-control">
+                    </div>
+                    {{form.numdoc}}
+                    <div class="form-group py-2">
+                        <label for="first_name">Nombres: </label>
+                        <input type="text" id="first_name" name="first_name" class="form-control">
+                    </div>
+                    {{form.first_name}}
+                    <div class="form-group py-2">
+                        <label for="last_name">Apellidos: </label>
+                        <input type="text" id="last_name" name="last_name" class="form-control">
+                    </div>
+                    {{form.last_name}}
+                    <div class="form-group py-2">
+                        <label for="email">Correo electronico:</label>
+                        <input type="email" id="email" name="email" class="form-control">
+                    </div>
+                    {{form.email}}
+                    <div class="form-group py-2">
+                        <label for="telefono">Telefono: </label>
+                        <input type="number" id="telefono" name="telefono" class="form-control">
+                    </div>
+                    {{form.telefono}}
+                    <div class="form-group py-2">
+                        <label for="password1">Contraseña:</label>
+                        <input type="password" id="password1" name="password1" class="form-control">
+                    </div>
+                    {{form.password1}}
+                    <div class="form-group py-2">
+                        <label for="password2">Contraseña 2:</label>
+                        <input type="password" id="password2" name="password2" class="form-control">
+                    </div>
+                    {{form.password2}}
+                    <div class="form-group py-2">
+                        <button type="submit" class="btn btn-success btn-block text-black">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
+        <h1>Lista de Usuarios</h1>
+        <div class="table-responsive py-2">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Tipo de Documento</th>
+                        <th>Numero de Documento</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Email</th>
+                        <th>Celular</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in usuarios %}
+                    <tr>
+                        <td>{{c.username}}</td>
+            			<td>{{c.idTipo.documento}}</td>
+                        <td>{{c.numdoc}}</td>
+                        <td>{{c.first_name}}</td>
+                        <td>{{c.last_name}}</td>
+                        <td>{{c.email}}</td>
+                        <td>{{c.telefono}}</td>
+                        <td>{{c.is_active}}</td>
+                        <td><a href="editarUsu/{{c.id}}" class="btn btn-info">Editar</a></td>
+                        <!--<td><a href="eliminacionUsu/{{c.id}}" class="btn btn-danger">Eliminar</a> --> 
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

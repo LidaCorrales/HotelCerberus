@@ -1,0 +1,28 @@
+{% extends "../base.html" %}
+
+{% load static %}
+
+{% block title %} Reservacion {% endblock %}
+
+{% block body %}
+
+<a href="/" class="btn btn-primary return-button" >Regresar</a>
+<br>
+<br>
+
+<h3>Reserva Pagada :D</h3>
+<br>
+<div class="container-fluid">
+    <form action="" method="GET" enctype="multipart/form-data">{%  csrf_token  %}
+        <p>Usuario: <input type="text" value="{{ username }}" name="username" readonly></p>
+        <p>Número de Habitación: <input type="number" value="{{ Id_habitacion }}" name="Id_habitacion"readonly></p>
+        <p>Fecha de entrada: <input type="date" value="{{ fechaentrada}}" name="fechaentrada"readonly></p>
+        <p>Fecha de salida: <input type="date" value="{{ fechasalida }}" name="fechasalida" readonly></p>
+        <p>Cantidad de clientes: <input type="number" value="{{ cantidad_clientes }}" name="cantidad_clientes" readonly></p>
+        <p>Precio final: <input type="decimal" value="{{ precio }}" name="precio"readonly></p>
+        <br>
+    </div>
+</div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "../base.html" %}
+
+{% load static %}
+
+{% block title %} Facturacion {% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h2>Edicion Factura</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action='{% url 'editarFactura' id_factura=factura.id_factura %}' method="POST">{% csrf_token %}
+                    <div class="form-group py-2">
+                        <input type="text" id="txtEstado" name="txtEstado" class="form-control" value="{{factura.estado}}" placeholder="Escriba el estado" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <button type="submit" class="btn btn-success btn-block text-black">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

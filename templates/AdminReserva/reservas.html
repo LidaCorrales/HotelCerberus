@@ -1,0 +1,99 @@
+{% extends "../base.html" %}
+
+{% load static %}
+
+{% block title %} Reserva {% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-dismissible alert-success">
+            <button type="button" class="clase" data-dismiss="alert">&times;</button>
+            <strong class="text-dark">{{ message}}</strong>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <h2>Reservaciones</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action={% url 'registraReservaAdmin' %} method="POST">{% csrf_token %}
+                    <div class="form-group py-2">
+                        <input type="text" id="username" name="username" class="form-control" placeholder="Usuario" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <input type="number" id="Id_habitacion" name="Id_habitacion" class="form-control" placeholder="Id de la habitacion" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <input type="date" id="fechaentrada" name="fechaentrada" min="{{ today }}" class="form-control" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <input type="date" id="fechasalida" name="fechasalida" min="{{ today }}" class="form-control" required>
+                    </div>  
+                    <div class="form-group py-2">
+                        <input type="number" id="cantidad_clientes" name="cantidad_clientes" class="form-control" placeholder="Escriba la cantidad de clientes" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <button type="submit" class="btn btn-success btn-block text-black">Reserva</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
+        <h1>Lista de Reservas</h1>
+        <div class="table-responsive py-2">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id de reserva</th>
+                        <th>Usuario</th>
+                        <th>Habitacion</th>
+                        <th>Fecha de Entrada</th>
+                        <th>Fecha de Salida</th>
+                        <th>Cantidad de Clientes</th>
+                        <th>Precio</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in lista_reserva %}
+                    <tr>
+                        <td>{{r.id_reserva}}</td>
+                        <td>{{r.username}}</td>
+                        <td>{{r.Id_habitacion_id}}</td>
+                        <td>{{r.fechaentrada}}</td>
+                        <td>{{r.fechasalida}}</td>
+                        <td>{{r.cantidad_clientes}}</td>
+                        <td>{{r.precio}}</td>
+                        <td>{{r.estado}}</td>
+                        <td><a href="editarReservaAdmin/{{r.id_reserva}}" class="btn btn-info">Editar</a></td>
+                        <!--<td><a href="eliminacionReserva/{{r.id_reserva}}" class="btn btn-danger">Eliminar</a></td>-->
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% if error_message %}
+    <script type="text/javascript">
+        alert("{{ error_message }}");
+    </script>
+{% endif %}
+
+<script>
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementById("fechaentrada").setAttribute('min', today);
+    document.getElementById("fechasalida").setAttribute('min', today);
+
+    document.getElementById("fechaentrada").addEventListener("change", function() {
+        var fechaEntrada = new Date(this.value);
+        fechaEntrada.setDate(fechaEntrada.getDate() + 1);
+        var minFechaSalida = fechaEntrada.toISOString().split('T')[0];
+        document.getElementById("fechasalida").setAttribute('min', minFechaSalida);
+});
+</script>

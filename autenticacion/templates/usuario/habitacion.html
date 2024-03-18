@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Habitaciones</title>
+    <link rel="stylesheet" type="text/css" href={% static 'css/habitacion.css' %}>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-s9YMS/EJQIh5SJPI9Oduaurlwlgpxdf3FC/iP5G6FAmZ8rJWIJde0QpLY+Jo3X6tO" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<body>
+    <header>
+        <h1>Hoteles cerberus</h1>
+        <p>Explora nuestras habitaciones exclusivas</p>
+        <div class="container justify-content-center">
+          <a href="/" class="btn btn-primary return-button" style="justify-items: left;">Regresar</a>
+        </div>
+    </header>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="cards-wrapper">
+            <div class="card">
+              <img src={% static 'imgs/sencilla1.jpg' %} class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Habitaciones Sencillas</h5>
+                <p class="card-text">Conozca aqui nuestras habitaciones sencillas</p>
+                <a href={% url 'HabitacionSencilla' %} class="btn btn-primary" style="background-color: #130455;">Descubre aqui</a>
+              </div>
+            </div>
+            <div class="card d-none d-md-block">
+              <img src={% static 'imgs/2.jpg' %} class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Habitaciones dobles</h5>
+                <p class="card-text">Conozca aqui nuestras habitaciones dobles</p>
+                <a href={% url 'HabitacionDoble' %} class="btn btn-primary" style="background-color: #130455;">Descubra aqui</a>
+              </div>
+            </div>
+            <div class="card d-none d-md-block">
+              <img src={% static 'imgs/doble3.jpg' %} class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Habitaciones Triples</h5>
+                <p class="card-text">Conozca aqui nuestras habitaciones triples</p>
+                <a href={% url 'HabitacionTriple' %} class="btn btn-primary" style="background-color: #130455;">Descubre aqui</a>
+              </div>
+            </div>
+            <div class="card d-none d-md-block">
+                <img src={% static 'imgs/suit.jpg' %} class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Suites Presidenciales</h5>
+                  <p class="card-text">Conozca aqui nuestras suites presidenciales</p>
+                  <a href={% url 'HabitacionSuites' %} class="btn btn-primary" style="background-color: #130455;">Descubre aqui</a>
+                </div>
+              </div>
+          </div>
+          </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% extends "../base.html" %}
+
+{% load static %}
+
+{% block title %} Usuarios {% endblock %}
+
+{% block body %}
+
+<h1>FACTURA ELECTRONICA</h1>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col"> Numero de Factura</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{ factura.id_factura }}</th>
+        <td>{{ factura.fecha_emitida }}</td>
+        <td>{{ reserva.username.username }}</td>
+        <td>{{ factura.total }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+<button class="btn btn-success" id="download-pdf">Descargar PDF</button>
+
+
+<script>
+    document.getElementById('download-pdf').addEventListener('click', () => {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        
+        doc.text(`Factura #${'{{ factura.id_factura }}'}`, 10, 10);
+        doc.text(`Fecha: ${'{{factura.fecha_emitida}}'}`,10,20);
+        doc.text(`Cliente: ${'{{ reserva.username.username }}'}`, 10, 30);
+        doc.text(`Total: $${'{{ factura.total }}'}`, 10, 40);
+        
+        doc.save(`factura_${'{{ factura.id_factura }}'}.pdf`);
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+
+{% endblock %}

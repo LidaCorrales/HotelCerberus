@@ -1,0 +1,59 @@
+{% extends "../base.html" %}
+
+{% load static %}
+
+{% block title %} Detalle de factura {% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h2>Adicion de productos</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="{% url 'registrarDfactura'  %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+                    <div class="form-group py-2">
+                        <label for="id_reserva">Numero de reserva</label>
+                        <input type="text" name="id_reserva" required>
+                    </div>
+                    <div class="input-group mb-2">
+                        <label for="producto_restaurante">Producto de restaurante</label>
+                        <input type="text" id="producto_restaurante" name="producto_restaurante" autocomplete="off" list="productos_restaurante">
+                        <datalist id="productos_restaurante">
+                            {% for producto in productos_restaurante %}
+                            <option value="{{ producto.Nombre }}">
+                            {% endfor %}
+                        </datalist>
+                    </div>
+                    <div class="input-group mb-2">
+                        <label for="num_producto_bar">Producto de Bar</label>
+                        <input type="text" id="producto_bar" name="producto_bar" autocomplete="off" list="productos_bar">
+                        <datalist id="productos_bar">
+                            {% for producto in productos_bar %}
+                            <option value="{{ producto.Nombre }}">
+                            {% endfor %}
+                        </datalist>
+                    </div>
+                    <div class="input-group mb-2">
+                        <label for="num_servicio_zonas_humedas">Servicio de zonas húmedas:</label>
+                        <input type="text" id="servicio_zonas_humedas" name="servicio_zonas_humedas" autocomplete="off" list="servicios_zonas_humedas">
+                        <datalist id="servicios_zonas_humedas">
+                            {% for servicio in servicios_zonas_humedas %}
+                            <option value="{{ servicio.Nombre }}">
+                            {% endfor %}
+                        </datalist>
+                    </div>
+                    <div class="form-group py-2">
+                        <label for="cantidad">Cantidad:</label>
+                        <input type="text" name="cantidad" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <button type="submit" class="btn btn-success btn-block text-black">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

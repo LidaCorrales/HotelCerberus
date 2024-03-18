@@ -1,0 +1,57 @@
+{% extends "../base.html" %}
+
+{% load static %}
+
+{% block title %} Reservas {% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h2>Edicion Reservas</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action={% url 'ediReserva' id_reserva=reserva_lista.id_reserva %} method="POST">{% csrf_token %}
+                    <div class="form-group py-2">
+                        <input type="date" id="txtEntrada" name="txtEntrada" class="form-control" min="{{ today }}" value="{{reservas.fechaentrada}}" placeholder="Escriba la fecha de entrada" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <input type="date" id="txtSalida" name="txtSalida" value="{{reservas.fechasalida}}" min="{{ today }}" class="form-control" placeholder="Escriba a fecha de salida" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <input type="number" id="txtCantidad" name="txtCantidad" value="{{reservas.cantidad}}" class="form-control" placeholder="Escriba la cantidad de personas" required>
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Estado</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01" name="txtEstado">
+                            <option selected>Seleccione</option>
+                            <option value="Por_confirmar">Por confirmar</option> 
+                            <option value="Confirmada">Confirmada</option>
+                            <option value="Cancelada">Cancelada</option>
+                        </select>
+                    </div>
+                    <div class="form-group py-2">
+                        <button type="submit" class="btn btn-success btn-block text-black">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+<script>
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementById("txtEntrada").setAttribute('min', today);
+    document.getElementById("txtSalida").setAttribute('min', today);
+
+    document.getElementById("fechaentrada").addEventListener("change", function() {
+        var fechaEntrada = new Date(this.value);
+        fechaEntrada.setDate(fechaEntrada.getDate() + 1);
+        var minFechaSalida = fechaEntrada.toISOString().split('T')[0];
+        document.getElementById("fechasalida").setAttribute('min', minFechaSalida);
+});
+</script>

@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/jpg" href="{% static 'imgs/logo.png' %}">
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href={% static 'css/registro.css' %}>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://kit.fontawesome.com/0811f032a4.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<h3 id="form-title">REGISTRO DE CUENTA NUEVA</h3>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form method="POST" action="">
+                        {% csrf_token %}
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class='fas fa-user-plus'></i></span>
+							</div>
+							{{form.username}}
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<label class="input-group-text" for="inputGroupSelect01">Tipo de documento</label>
+							</div>
+							<select class="custom-select" id="inputGroupSelect01" name="idTipo">
+								<option selected>Seleccione</option>
+        						{% for tipo_doc in tipos_documento %}
+            						<option value="{{tipo_doc.idTipo}}">{{tipo_doc.documento}}</option>
+        						{% endfor %}
+							</select>
+						</div>	
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fa-solid fa-id-card"></i></span>
+							</div>
+							{{form.numdoc}}
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fa-solid fa-signature"></i></span>
+							</div>
+							{{form.first_name}}
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fa-regular fa-face-smile"></i></span>
+							</div>
+							{{form.last_name}}
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fa-regular fa-envelope"></i></span>
+							</div>
+							{{form.email}}
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
+							</div>
+							{{form.telefono}}
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							{{form.password1}}
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							{{form.password2}}
+						</div>
+
+				   		<div class="d-flex justify-content-center mt-3 login_container">
+				 			<input class="btn login_btn bg-dark text-light" type="submit" value="Register Account">
+				   		</div>
+					</form>
+				</div>
+
+				<div class="d-flex justify-content-center mt-3 login_container text-danger">
+                	{{form.errors}}
+				</div>
+
+				<div class="mt-4 text-light">
+					<div class="d-flex justify-content-center links">
+						¿Tienes una cuenta? <a href={% url 'login' %} class="ml-2 text-success">Inicia sesión</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+
+		//Query All input fields
+		var form_fields = document.getElementsByTagName('input')
+		form_fields[1].placeholder='Ingrese un usuario';
+		form_fields[2].placeholder='Ingrese el numero de documento';
+		form_fields[3].placeholder='Ingrese el nombre';
+		form_fields[4].placeholder='Ingrese el apellido';
+		form_fields[5].placeholder='Ingrese el correo';
+		form_fields[6].placeholder='Escribir el telefono';
+		form_fields[7].placeholder='Escribir contraseña';
+		form_fields[8].placeholder='Vuelva a escribir la contraseña';
+
+
+		for (var field in form_fields){	
+			form_fields[field].className += ' form-control'
+		}
+	</script>
+</body>
+</html>
