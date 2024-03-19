@@ -14,7 +14,7 @@
         <th scope="col"> Numero de Factura</th>
         <th scope="col">Fecha</th>
         <th scope="col">Cliente</th>
-        <th scope="col">Subtotal</th>
+        <th scope="col">Total</th>
       </tr>
     </thead>
     <tbody>
@@ -22,7 +22,7 @@
         <th scope="row">{{ factura.id_factura }}</th>
         <td>{{ factura.fecha_emitida }}</td>
         <td>{{ reserva.username.username }}</td>
-        <td>{{ factura.totalReserva }}</td>
+        <td>{{ factura.precioServicio }}</td>
       </tr>
     </tbody>
   </table>
@@ -39,7 +39,7 @@
         doc.text(`Factura #${'{{ factura.id_factura }}'}`, 10, 10);
         doc.text(`Fecha: ${'{{factura.fecha_emitida}}'}`,10,20);
         doc.text(`Cliente: ${'{{ reserva.username.username }}'}`, 10, 30);
-        doc.text(`Total: $${'{{ factura.totalReserva }}'}`, 10, 40);
+        doc.text(`Total: $${'{{ factura.Servicio }}'}`, 10, 40);
         
         doc.save(`factura_${'{{ factura.id_factura }}'}.pdf`);
     });

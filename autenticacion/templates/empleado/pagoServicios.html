@@ -1,0 +1,27 @@
+{% extends "../base.html" %}
+
+{% load static %}
+
+{% block title %} Facturacion Servicios {% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h2>Pagar servicios</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action='{% url 'procesarPagoD' %}' method="POST">{% csrf_token %}
+                    <div class="form-group py-2">
+                        <input type="number" name="id_reserva" class="form-control" placeholder="Escriba el id de la reserva" required>
+                    </div>
+                    <div class="form-group py-2">
+                        <button type="submit" class="btn btn-success btn-block text-black">Pagar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

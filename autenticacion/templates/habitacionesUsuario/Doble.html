@@ -47,6 +47,7 @@
             <tbody>
                 {% for habitacion in habitaciones %}
                   {% if habitacion.id_tipo_hab.tipo == "Doble" %}
+                    {% if habitacion.estado == "Disponible" %}
                 <tr>
                     <th scope="row">{{habitacion.Id_habitacion}}</th>
                     <td>{{habitacion.id_tipo_hab.tipo}}</td>
@@ -54,6 +55,7 @@
                     <td>{{habitacion.id_tipo_hab.espacio}}</td>
                     <td><a href="{% url 'VistaHabitacion' habitacion.Id_habitacion %}">Ver más</a></td>
                 </tr>
+                    {% endif %}
                   {% endif %}
                   {% empty %}
                     <tr>

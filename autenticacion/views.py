@@ -118,7 +118,7 @@ def logoutUser(request):
 @cache_not   
 @autorizados_user(autorizados_user=['admin'])    
 def pageadmin(request):
-        return render(request,'administrador/admin.html')
+        return render(request,'Administrador/admin.html')
     
 #Views de paginas del usuario
 @cache_not
@@ -164,3 +164,8 @@ def recepcionista(request):
 def HabitacionesE(request):
     habitacion=Habitaciones.objects.all()
     return render(request,'empleado/habitacionesE.html', {"habitacion":habitacion})
+
+@cache_not
+@autorizacion_login_user
+def ServiciosEmpleado(request):
+    return render(request,'empleado/pagoServicios.html')

@@ -6,8 +6,9 @@ class Factura(models.Model):
     id_factura = models.AutoField(primary_key=True)
     reserva = models.ForeignKey(Reservacion, on_delete=models.CASCADE)
     fecha_emitida = models.DateField(auto_now_add=True)
-    estado = models.CharField(max_length=15)
-    total = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    estado = models.CharField(max_length=30)
+    totalReserva = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    precioServicio = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
 class DetalleFactura(models.Model):
     id_detallefactura = models.AutoField(primary_key=True)

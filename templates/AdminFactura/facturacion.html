@@ -27,7 +27,8 @@
                         <th>Id de reserva</th>
                         <th>Fecha de proceso</th>
                         <th>Estado</th>
-                        <th>Total</th>
+                        <th>Total Reserva</th>
+                        <th>Total Servicios</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,7 +38,8 @@
                         <td>{{a.reserva.id_reserva}}</td>
                         <td>{{a.fecha_emitida}}</td>
                         <td>{{a.estado}}</td>
-                        <td>{{a.total}}</td>
+                        <td>{{a.totalReserva}}</td>
+                        <td>{{a.precioServicio}}</td>
                         <td><a href="edicionFactura/{{a.id_factura}}" class="btn btn-info">Editar</a></td>
                         <td><a href="eliminarFactura/{{a.id_factura}}" class="btn btn-danger">Eliminar</a></td>
                     </tr>

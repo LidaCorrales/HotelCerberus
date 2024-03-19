@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path
 from . import views
 from django.contrib.auth import views as auth_views
 
@@ -29,4 +29,5 @@ urlpatterns = [
     #------------empleado-------------
     path('Empleados/',views.recepcionista, name='paginarecepcionista'),
     path('EmpleadosHab/',views.HabitacionesE, name='habitacionesE'),
+    path('EmpleadosS/',views.ServiciosEmpleado, name='PagoServiciosEmpleado'),
 ]

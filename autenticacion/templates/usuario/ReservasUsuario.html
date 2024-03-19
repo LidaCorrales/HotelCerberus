@@ -45,6 +45,7 @@
                   <th scope="col">Cantidad de personas</th>
                   <th scope="col">Precio</th>
                   <th scope="col">Estado</th>
+                  <th scope="col">Facturas</th>
                 </tr>
             </thead>
             <tbody>
@@ -59,9 +60,14 @@
                         <td>{{re.precio}}</td>
                         <td>
                           {% if re.estado == "Por Confirmar" %}
-                              <a href="{% url 'confirmarReservaPago'%}?id_reserva={{ re.id_reserva }}"">Pagar reserva</a>
+                              <a href="{% url 'confirmarReservaPago'%}?id_reserva={{ re.id_reserva }}">Pagar reserva</a>
                           {% elif re.estado == "Confirmada" %}
                               <a href="{% url 'verReservaPago' %}?id_reserva={{ re.id_reserva }}">Ver reserva</a>
+                          {% endif %}
+                        </td>
+                        <td>
+                          {% if re.estado == "Confirmada" %}
+                            <a href="{% url 'ViewFacturas' id_reserva=re.id_reserva %}">Ver facturas</a>
                           {% endif %}
                         </td>
                       </tr>

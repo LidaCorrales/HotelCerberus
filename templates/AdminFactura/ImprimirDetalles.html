@@ -9,10 +9,10 @@
 <div class="contenido">
     <h2 style="text-align: center;">¿Desea imprimir factura?</h2>
     <div class="botones">
-        <a href="{% url 'ImprimiendoFactura' id_reserva=id_reserva %}">
+        <a href="{% url 'ImprimiendoFacturaS' id_reserva=id_reserva %}">
             <button class="btn btn-success">Si</button>
         </a>
-        <a href="{% url 'MisReservas' %}">
+        <a href="{% url 'PagoServiciosEmpleado' %}">
             <button class="btn btn-warning">No</button>
         </a>
     </div>

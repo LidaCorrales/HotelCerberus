@@ -1,0 +1,34 @@
+{% extends "../base.html" %}
+
+{% load static %}
+
+{% block title %} Facturas {% endblock %}
+
+{% block body %}
+
+<h1>PAGOS</h1>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col"> Numero de Factura</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Total de Reserva</th>
+        <th scope="col">Total de Factura</th>
+        <th scope="col">Estado Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{ factura.id_factura }}</th>
+        <td>{{ factura.fecha_emitida }}</td>
+        <td>{{ reserva.username.username }}</td>
+        <td>{{ factura.totalReserva }}</td>
+        <td>{{ factura.precioServicio }}</td>
+        <td>{{ factura.estado }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+{% endblock %}

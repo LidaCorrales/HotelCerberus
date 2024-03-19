@@ -2,7 +2,7 @@ from django.shortcuts import render , redirect
 from .models import Factura, DetalleFactura
 from Aplicaciones.Reserva.models import Reservacion
 from Aplicaciones.Servicios.models import *
-from autenticacion.decorators import admin_only, cache_not
+from autenticacion.decorators import admin_only, cache_not, autorizacion_login_user, empleados_only
 from django.contrib import messages
 from django.db import transaction
 from datetime import date
@@ -45,13 +45,13 @@ def editarFactura(request,id_factura):
 #---------------Detalle de Factura ---------------------
 
 @cache_not
-@admin_only
+@empleados_only
 def detallefacturaVista(request):
     Dfactura_lista = DetalleFactura.objects.all()
     return render(request, 'AdminFactura/detalleFactura.html',{'dfactura':Dfactura_lista})
 
 @cache_not
-@admin_only
+@empleados_only
 def adicionDfactura(request):
     productos_restaurante = Restaurante.objects.all()
     productos_bar = Bar.objects.all()
@@ -66,7 +66,7 @@ def adicionDfactura(request):
     return render(request,'AdminFactura/adicionDfactura.html',context)
 
 @cache_not
-@admin_only
+@empleados_only
 def registrarDfactura(request):
     reserva = int(request.POST['id_reserva'])
     
@@ -105,7 +105,7 @@ def registrarDfactura(request):
             subtotal=subtotal
         )
         
-        factura.total+=subtotal
+        factura.precioServicio+=subtotal
         factura.save()
         
         return redirect('DfacturaVista')
@@ -119,12 +119,23 @@ def eliminarDFactura(id_detallefactura):
     DFactura.delete()
     return redirect('DfacturaVista')
 
+#------------Factura CLIENTES-------------------------
+@cache_not
+@autorizacion_login_user
+def pageusuFacturas(request, id_reserva):
+    reserva = Reservacion.objects.get(id_reserva=id_reserva)
+    factura = Factura.objects.get(reserva=reserva)
+    context = {'factura': factura,'reserva':reserva}
+    return render(request, 'usuario/Verfactura.html', context)
+
 #-----------Procesar pago PDF GENERADOR -------------------------
 @cache_not
+@autorizacion_login_user
 def ImprimirFactura(request , id_reserva):
     return render(request, 'AdminReserva/ImprimirFactura.html',{'id_reserva': id_reserva})
 
 @cache_not
+@autorizacion_login_user
 def ImprimiendoFactura(request, id_reserva):
     reserva = Reservacion.objects.get(id_reserva=id_reserva)
     factura = Factura.objects.get(reserva=reserva)
@@ -132,15 +143,16 @@ def ImprimiendoFactura(request, id_reserva):
     return render(request,'AdminReserva/ImprimirXD.html', context)
 
 @cache_not
+@autorizacion_login_user
 def procesarPago(request,id_reserva):
     reserva = Reservacion.objects.get(id_reserva=id_reserva)
-    estado = "Pagado"
-    total = reserva.precio
+    estado = "Pago de reserva unicamente"
+    totalReserva = reserva.precio
 
     factura = Factura.objects.create(
         reserva=reserva,
         estado=estado,
-        total=total
+        totalReserva=totalReserva
     )
     
     reserva.estado = Reservacion.Confirmada
@@ -148,13 +160,28 @@ def procesarPago(request,id_reserva):
     
     return redirect('ImprimirFactura',id_reserva=id_reserva)
 
+@cache_not
+@autorizacion_login_user
+def ImprimirServicios(request,id_reserva):
+    return render(request, 'AdminFactura/ImprimirDetalles.html',{'id_reserva': id_reserva})
 
-@transaction.atomic
-def cerrar_estadia(id_reserva):
-    factura_servicios = Factura.objects.filter(reserva_id=id_reserva, estado='Pendiente').first()
+@cache_not
+@autorizacion_login_user
+def ImprimiendoFacturaServicios(request, id_reserva):
+    reserva = Reservacion.objects.get(id_reserva=id_reserva)
+    factura = Factura.objects.get(reserva=reserva)
+    context = {'factura': factura,'reserva':reserva}
+    return render(request,'AdminFactura/ImprimirD.html', context)
+
+@cache_not
+@autorizacion_login_user
+def procesarPagoDetalle(request):
+    id_reserva=request.POST.get('id_reserva')
+    reserva = Reservacion.objects.get(id_reserva=id_reserva)
+    factura = get_object_or_404(Factura, reserva=reserva)
+    estado = "Pago Total Hecho"
+
+    factura.estado=estado
+    factura.save()
     
-    if factura_servicios:
-        total_servicios = sum(detalle.subtotal for detalle in factura_servicios.detalles.all())
-        factura_servicios.total = total_servicios
-        factura_servicios.estado = 'Pagado'
-        factura_servicios.save()
+    return redirect('ImprimirFacturaS',id_reserva=id_reserva)
