@@ -8,7 +8,7 @@
 }
 body {      
     margin: 40px;
-    background-image: url(../imgs/fondo.jpg);
+    background-color: black;
   }
   h1 {
     color: aliceblue;
@@ -51,43 +51,64 @@ body {
 }
 
 /*Segmento Restaurante*/
+/*Carnes*/
+.cont{
+  margin-top: 250px;
+  display: flex;
+
+}
+.carousel,.catalogo_carnes{
+  flex: 1;
+}
 .catalogo_carnes{
-    margin-left:48%;
-    margin-top: -36%;    
-    color: aliceblue;
-    font-family: "Kdam Thmor Pro", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    text-align: left;
+color: aliceblue;
+}
+/*Bebidas*/
+.cont1{
+  margin-top: 250px;
+  display: flex;
+
+}
+
+.carousel1,.catalogo_bebidas{
+  flex:1; 
 }
 .catalogo_bebidas{
-  margin-left: -30%;
-  margin-top:-50%;
   color: aliceblue;
-  font-family: "Kdam Thmor Pro", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  text-align: left;
+  margin-right: 500px;
+  margin-top:-500px;
+}
+/*Postres*/
+.cont2{
+  margin-top: 1000px;
+  margin-right: 200px;
+  display: flex;
+}
+.carousel2{
+  
+  margin-top: 158px;
+  
+}
+.carousel2,.catalogo_postres{
+  flex: 1;
 }
 .catalogo_postres{
-  margin-left:48%;
-  margin-top: -50%;    
   color: aliceblue;
-  font-family: "Kdam Thmor Pro", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  text-align: left;
+  margin-left:200px;
 }
 /*Segmento Bar*/
-.catalogo_cervezas{
-  margin-left:48%;
-  margin-top: -33%;    
-  color: aliceblue;
-  font-family: "Kdam Thmor Pro", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  text-align: left;
+.cont4{
+  display: flex;
+  margin-top: 1000px;
+  margin-right: 200px;
 }
+.carousel4,.catalogo_cervezas{
+  flex: 1;
+}
+.catalogo_cervezas{
+  color: aliceblue;
+}
+
 .catalogo_vinos_whisky{
   margin-left:-28%;
   margin-top: -50%;    
@@ -97,6 +118,7 @@ body {
   font-style: normal;
   text-align: left;
 }
+
 /*Segmento zonas humedas*/
 .desc1{
   color: aliceblue;

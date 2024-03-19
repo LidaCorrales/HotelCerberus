@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header style="background-color: rgb(130, 21, 163);">
         <a href={% url 'paginausu' %} class="logo">
             <img src={% static 'imgs/logo.png' %}>
         </a>
@@ -27,34 +27,31 @@
            
         </ul>
 </header>
-<div class="container">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 158px; width:800px; margin-left:-350px; border: 2px solid white;">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <img src={% static 'imgs/meat.jpg' %} alt="Los Angeles" style="width:100%;">
+<div class="cont">
+  <div class="carousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:800px;  border: 2px solid white; ">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src={% static 'imgs/meat.jpg' %} alt="Los Angeles" style="width:100%;">
+        </div>
+  
+        <div class="item">
+          <img src={% static 'imgs/ricardo.jpg' %} alt="Chicago" style="width:100%;">
+        </div>
+      
+        <div class="item">
+          <img src={% static 'imgs/rest.jpg' %} alt="New york" style="width:100%;">
+        </div>
       </div>
-
-      <div class="item">
-        <img src={% static 'imgs/ricardo.jpg' %} alt="Chicago" style="width:100%;">
-      </div>
-    
-      <div class="item">
-        <img src={% static 'imgs/rest.jpg' %} alt="New york" style="width:100%;">
-      </div>
+      
     </div>
-    
   </div>
-</div>
-<br>
-<div class="catalogo_carnes">
+  <div class="catalogo_carnes" style="margin-left: 200px;">
     <div class="container">
         <h1>Carta de Carnes</h1>
         <div class="menu-item">
@@ -94,17 +91,18 @@
         </div>
     </div>
 </div>
-
-<div class="container">
-    <div id="myCarouse2" class="carousel slide" data-ride="carousel" style="margin-top: 158px; width:800px; margin-left:650px; border: 2px solid white;">
-      <!-- Indicators -->
+</div>
+<div class="cont1">
+  <div class="carousel1">
+    <div id="myCarouse2" class="carousel slide" data-ride="carousel" style=" width:800px; border: 2px solid white; margin-left: 950px;">
+     
       <ol class="carousel-indicators">
         <li data-target="#myCarouse2" data-slide-to="0" class="active"></li>
         <li data-target="#myCarouse2" data-slide-to="1"></li>
         <li data-target="#myCarouse2" data-slide-to="2"></li>
       </ol>
   
-      <!-- Wrapper for slides -->
+     
       <div class="carousel-inner">
         <div class="item active">
           <img src={% static 'imgs/soda.jpg' %} alt="Los Angeles" style="width:100%;">
@@ -118,7 +116,7 @@
           <img src={% static 'imgs/drinki.jpg' %} alt="New york" style="width:100%;">
         </div>
       </div>
-    </div>
+  </div>
   <div class="catalogo_bebidas">
     <div class="container">
         <h1>Carta de Bebidas</h1>
@@ -155,9 +153,10 @@
         </div>
     </div>
 </div>
-
-<div class="container">
-    <div id="myCarouse3" class="carousel slide" data-ride="carousel" style="margin-top: 158px; width:800px; margin-left:-350px; border: 2px solid white;">
+</div>
+<div class="cont2">
+  <div class="carousel2">
+    <div id="myCarouse3" class="carousel slide" data-ride="carousel" style=" margin-left:-1680px; width:800px; border: 2px solid white;">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#myCarouse3" data-slide-to="0" class="active"></li>
@@ -179,47 +178,47 @@
           <img src={% static 'imgs/side.jpg' %} alt="New york" style="width:100%;">
         </div>
       </div>
-    </div>
-    <div class="catalogo_postres">
-        <div class="container">
-            <h1>Carta de Postres</h1>
-            <div class="menu-item">
-                <h2>Snickerdoodle Blondies</h2>
-                <p>Deliciosos blondies de canela y azúcar, con un toque crujiente y una textura perfecta.</p>
-                <p>Precio: $100</p>
-            </div>
-            <div class="menu-item">
-                
-                <h2>Pastel de Cereza</h2>
-                <p>Suave bizcocho de cereza con un relleno cremoso de crema y cerezas.</p>
-                <p>Precio: $120</p>
-            </div>
-            <div class="menu-item">
-                
-                <h2>Cheesecake de Limón y Arándanos</h2>
-                <p>Cheesecake cremoso y suave con un delicioso sabor a limón y arándanos.</p>
-                <p>Precio: $150</p>
-            </div>
-            <div class="menu-item">
-                
-                <h2>Tiramisú</h2>
-                <p>Delicioso postre italiano con capas de bizcocho empapado en café y crema de mascarpone.</p>
-                <p>Precio: $180</p>
-            </div>
-            <div class="menu-item">
-                
-                <h2>Brownie de Chocolate</h2>
-                <p>Delicioso brownie de chocolate, húmedo y con un intenso sabor a chocolate.</p>
-                <p>Precio: $120</p>
-            </div>
-            <div class="menu-item">
-                
-                <h2>Tarta de Manzana</h2>
-                <p>Clásica tarta de manzana, crujiente y deliciosa, con un relleno dulce y jugoso.</p>
-                <p>Precio: $140</p>
-            </div>
-        </div>
-     </div>
-     
+  </div>
+  <div class="catalogo_postres" style="margin-left: -700px; margin-top:-550px;">
+    <div class="container">
+      <h1>Carta de Postres</h1>
+      <div class="menu-item">
+          <h2>Snickerdoodle Blondies</h2>
+          <p>Deliciosos blondies de canela y azúcar, con un toque crujiente y una textura perfecta.</p>
+          <p>Precio: $100</p>
+      </div>
+      <div class="menu-item">
+          
+          <h2>Pastel de Cereza</h2>
+          <p>Suave bizcocho de cereza con un relleno cremoso de crema y cerezas.</p>
+          <p>Precio: $120</p>
+      </div>
+      <div class="menu-item">
+          
+          <h2>Cheesecake de Limón y Arándanos</h2>
+          <p>Cheesecake cremoso y suave con un delicioso sabor a limón y arándanos.</p>
+          <p>Precio: $150</p>
+      </div>
+      <div class="menu-item">
+          
+          <h2>Tiramisú</h2>
+          <p>Delicioso postre italiano con capas de bizcocho empapado en café y crema de mascarpone.</p>
+          <p>Precio: $180</p>
+      </div>
+      <div class="menu-item">
+          
+          <h2>Brownie de Chocolate</h2>
+          <p>Delicioso brownie de chocolate, húmedo y con un intenso sabor a chocolate.</p>
+          <p>Precio: $120</p>
+      </div>
+      <div class="menu-item">
+          
+          <h2>Tarta de Manzana</h2>
+          <p>Clásica tarta de manzana, crujiente y deliciosa, con un relleno dulce y jugoso.</p>
+          <p>Precio: $140</p>
+      </div>
+  </div>
+  </div>
+</div>
 </body>
 </html>
