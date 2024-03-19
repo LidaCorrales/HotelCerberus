@@ -39,7 +39,7 @@
         doc.text(`Factura #${'{{ factura.id_factura }}'}`, 10, 10);
         doc.text(`Fecha: ${'{{factura.fecha_emitida}}'}`,10,20);
         doc.text(`Cliente: ${'{{ reserva.username.username }}'}`, 10, 30);
-        doc.text(`Total: $${'{{ factura.Servicio }}'}`, 10, 40);
+        doc.text(`Total: $${'{{ factura.precioServicio }}'}`, 10, 40);
         
         doc.save(`factura_${'{{ factura.id_factura }}'}.pdf`);
     });
