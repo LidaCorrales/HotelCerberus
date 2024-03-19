@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from . import views
+##
+from django.conf.urls import handler404
+#
+from Hotel.views import Error404view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +30,8 @@ urlpatterns = [
     path('Habitaciones/',include('Aplicaciones.Habitaciones.urls')),
     path('Reservas/',include('Aplicaciones.Reserva.urls')),
     path('Facturacion/',include('Aplicaciones.Facturacion.urls')),
+    #
+    path('<path:dummy>/', views.Error404view.as_view(), name='error_404'),  # Captura todas las URL que no coincidan con las anteriores
 ]
+
+handler404 = Error404view.as_view()

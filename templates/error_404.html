@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 404 - Página no encontrada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+            background-image: url("{% static 'imgs/error1.png' %}"); /* Ruta de tu imagen */
+            background-size: 50%; /* Cambiar a un tamaño específico, como 50% */
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh; /* Para ocupar toda la altura de la ventana */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Color de fondo del contenido */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Error 404</h1>
+            <p class="lead">Lo sentimos, la página que estás buscando no se pudo encontrar.</p>
+        </div>
+    </div>
+</body>
+</html>
