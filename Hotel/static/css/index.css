@@ -26,6 +26,7 @@ header{
     justify-content: space-between;
     background: transparent;
     transition: all ease .55s;
+    background-color: #2E958C;
 }
 
 .navlist{
@@ -127,7 +128,7 @@ section{
 .home-text i{
     height: 45px;
     width: 45px;
-    background: thistle;
+    background:#2E958C ;
     color: black;
     display: inline-flex;
     align-items: center;
@@ -140,7 +141,7 @@ section{
 }
 
 .home-text i:hover{
-    background: lightcoral;
+    background: white;
     color: whitesmoke;
     transform: scale(1.09);
 }
@@ -149,7 +150,7 @@ section{
     display: inline-block;
     padding: 15px 22px;
     color: black;
-    background: thistle;
+    background:#2E958C;
     border-radius: 15px;
     font-size: 16px;
     font-weight: 700;
@@ -160,9 +161,9 @@ section{
 }
 
 .btn:hover{
-    border: 1px solid thistle;
+    border: 1px solid #2E958C ;
     background: transparent;
-    color: rgb(165, 157, 165);
+    color:aliceblue;
 }
 
 .btn22{
@@ -209,7 +210,7 @@ section{
 /* Servicios*/
 
 .servicio{
-    background-image: url(../imgs/fondo.jpg);
+    background-color: #789;
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -222,6 +223,7 @@ section{
     width: 1130px;
     margin: 30px auto;
     text-align: center;
+    
 }
 
 .box{
@@ -241,6 +243,7 @@ section{
     position: relative;
     overflow: hidden;
     text-align: center;
+    background-color: #2E958C;
 }
 
 .card i{
@@ -265,7 +268,7 @@ h5{
 }
 
 .card a{
-    background-color: palevioletred;
+    background-color:#789;
     color: white;
     text-decoration: none;
     border: 2px solid transparent;
