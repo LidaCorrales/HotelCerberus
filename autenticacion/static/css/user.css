@@ -10,7 +10,7 @@
 }
 
 body{
-    background: black;
+    background: #789;
     color: azure;
 }
 
@@ -26,6 +26,7 @@ header{
     justify-content: space-between;
     background: transparent;
     transition: all ease .55s;
+    background-color: #2E958C;
 }
 
 .navlist{
@@ -85,7 +86,7 @@ section{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: url(../imgs/fondo.jpg);
+    background-color:#789;
     background-size: cover;
     background-position: center;
     gap: 30px;

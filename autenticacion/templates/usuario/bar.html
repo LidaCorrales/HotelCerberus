@@ -27,10 +27,12 @@
     </ul>
 
 </header>
-<br>
-<div class="cont3">
-  <div class="carousel3">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 150px; width:800px;  border: 2px solid white;">
+<!-- Vista Cervezas -->
+<div style="display: flex; justify-content: center; align-items: start;">
+<div class="cont" style=" margin-top: 150px;">
+  <!-- Carrucel -->
+  <div class="carousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" style=" width:800px; border: 2px solid white;">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -65,7 +67,8 @@
       </div>
     </div>
   </div>
-  <div class="catalogo_cervezas" style="margin-left: 900px; margin-top:-550px;">
+  <!-- Menú -->
+  <div class="catalogo_cervezas" style="margin-left: 850px; margin-top:-550px;">
     <h1>Catálogo de Cervezas</h1>
   <div class="menu-item">
     <h2>Cerveza Artesanal 1</h2>
@@ -99,13 +102,81 @@
   </div>
   </div>
 </div>
-<div class="cont4">
-  <div class="carousel4">
-
+</div>
+<!-- Vista Vinos y Whiskys -->
+<div style="display: flex; justify-content: center; align-items: start;">
+<div class="cont" style=" margin-top: 200px;">
+  <!-- Carrucel -->
+  <div class="carousel">
+    <div id="myCarouse2" class="carousel slide" data-ride="carousel" style=" width:800px; margin-left:930px; border: 2px solid white;">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarouse2" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarouse2" data-slide-to="1"></li>
+        <li data-target="#myCarouse2" data-slide-to="2"></li>
+      </ol>
+  
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+  
+        <div class="item active">
+          <img src={% static 'imgs/pot.jpg' %}  style="width:100%;">
+          <div class="carousel-caption">
+            
+          </div>
+        </div>
+  
+        <div class="item">
+          <img src={% static 'imgs/wh.jpg' %}  style="width:100%;">
+          <div class="carousel-caption">
+          
+          </div>
+        </div>
+      
+        <div class="item">
+          <img src={% static 'imgs/engin.jpg' %} style="width:100%;">
+          <div class="carousel-caption">
+            
+          </div>
+        </div>
+    
+      </div>
   </div>
-  <div class="catalogo_vinos_whisky">
-
+  <!-- Menñu -->
+  <div class="catalogo_vinos_whisky" style="margin-left:2px; margin-top: -550px;">
+    <h1>Catálogo de Vinos y Whisky</h1>
+    <div class="menu-item">
+      <h2>Vino Tinto Reserva 1</h2>
+      <p>Descripción del Vino Tinto Reserva 1. Un vino tinto de reserva con cuerpo, equilibrado y con aromas a frutas maduras.</p>
+      <p>Precio: $150</p>
+    </div>
+    <div class="menu-item">
+      <h2>Vino Blanco Seco 1</h2>
+      <p>Descripción del Vino Blanco Seco 1. Un vino blanco seco y fresco, con notas cítricas y florales.</p>
+      <p>Precio: $120</p>
+    </div>
+    <div class="menu-item">
+      <h2>Whisky Escocés Single Malt 1</h2>
+      <p>Descripción del Whisky Escocés Single Malt 1. Un whisky escocés de malta única, con aromas a turba y madera ahumada.</p>
+      <p>Precio: $200</p>
+    </div>
+    <div class="menu-item">
+      <h2>Whisky Bourbon 1</h2>
+      <p>Descripción del Whisky Bourbon 1. Un whisky bourbon americano, suave y con notas de vainilla y caramelo.</p>
+      <p>Precio: $180</p>
+    </div>
+    <div class="menu-item">
+      <h2>Vino Rosado Semidulce 1</h2>
+      <p>Descripción del Vino Rosado Semidulce 1. Un vino rosado semidulce, perfecto para maridar con postres o disfrutar en la tarde.</p>
+      <p>Precio: $100</p>
+    </div>
+    <div class="menu-item">
+      <h2>Vino Espumoso Brut 1</h2>
+      <p>Descripción del Vino Espumoso Brut 1. Un vino espumoso brut, elegante y con burbujas finas, ideal para celebraciones.</p>
+      <p>Precio: $180</p>
+    </div>
   </div>
 </div>
+</div>
 </body>
-</html>
+</html>s

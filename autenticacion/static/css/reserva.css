@@ -10,7 +10,7 @@
 }
 body {      
     margin: 110px;
-    background-image: url(../imgs/fondo.jpg);
+    background-color: #789;
   }
   h1 {
     color: aliceblue;
@@ -30,6 +30,7 @@ body {
     justify-content: space-between;
     background: transparent;
     transition: all ease .55s;
+    background-color: #2E958C;
 }
 
 .logo img{

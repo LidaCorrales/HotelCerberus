@@ -10,7 +10,7 @@
 }
 
 body{
-    background: black;
+    background:#789;
     color: azure;
 }
 
@@ -85,7 +85,7 @@ section{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: url(../imgs/fondo.jpg);
+    background-color: #789;
     background-size: cover;
     background-position: center;
     gap: 30px;
