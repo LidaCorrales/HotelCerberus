@@ -8,7 +8,9 @@
 }
 body {      
     margin: 40px;
-    background-color: #7890A5;
+    background-image:url(../imgs/vecteezy_abstract-white-line-background-wall-vector-illustration_7696726.jpg);
+    background-size: cover;
+   
   }
   h1 {
     color: aliceblue;
@@ -29,7 +31,7 @@ body {
     justify-content: space-between;
     background: transparent;
     transition: all ease .55s;
-    background-color: #2E958C;
+    background-color:  #3f0377;
 }
 
 .logo img{
@@ -41,39 +43,31 @@ body {
 .navlist a{
     font-size: 15px;
     font-weight: 400;
-    color: bisque;
+    color: aliceblue;
     margin-right:30%;
     transition: al ease .55s;
     
 }
 
 .navlist a:hover{
-    color: plum;
+    color: rgb(189, 95, 189);
 }
 
+.menu h1{
+  color: #3f0377;
+}
 /*Segmento Restaurante*/
-/*Carnes*/
-.catalogo_carnes{
-  color: aliceblue;
-}
-/*Bebidas*/
-.catalogo_bebidas{
-  color: aliceblue;
-}
-/*Postres*/
-.catlogo_postres{
-  color: aliceblue;
-}
-/*Segmento Bar*/
-.catalogo_cervezas{
-  color: aliceblue;
+
+.catalogo_carnes,.catalogo_bebidas,.catlogo_postres{
+  color: #3f0377;
 }
 
-.catalogo_vinos_whisky{
-  color: aliceblue;
+/*Segmento Bar*/
+.catalogo_cervezas,.catalogo_vinos_whisky,.catalogo_vinos_whisky{
+  color: #3f0377;
 }
 
 /*Segmento zonas humedas*/
 .desc1,.desc2,.desc3,.desc4{
-  color: aliceblue;
+  color: #3f0377;
 }

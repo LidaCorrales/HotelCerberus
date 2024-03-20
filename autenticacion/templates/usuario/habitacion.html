@@ -11,13 +11,14 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-s9YMS/EJQIh5SJPI9Oduaurlwlgpxdf3FC/iP5G6FAmZ8rJWIJde0QpLY+Jo3X6tO" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <body>
-    <header>
-        <h1>Hoteles cerberus</h1>
-        <p>Explora nuestras habitaciones exclusivas</p>
-        <div class="container justify-content-center">
-          <a href="/" class="btn btn-primary return-button" style="justify-items: left;">Regresar</a>
-        </div>
-    </header>
+  <header>
+   <a href={% url 'paginausu' %} class="logo" >
+    <img src={% static "imgs/logo.png" %} style="width:50px;">
+   </a>
+   <ul class="navlist">
+    <a href={% url "paginausu" %} style="margin-left: 1300px;">Inicio</a>
+   </ul>
+</header>
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
