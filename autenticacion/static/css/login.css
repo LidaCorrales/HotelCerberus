@@ -6,21 +6,16 @@
 }
 
 body {
-	width: 100%;
-    height: 100vh;
-    display: flex;
-    background: url(../imgs/fondo.jpg);
-    background-size: cover;
-    background-position: center;
-    gap: 30px;
-    overflow-x: hidden;
+	margin: 40px;
+  	background-image:url(../imgs/fondo1.jpg);
+  	background-size: cover;
 }
 
 .user_card {
 	width: 390px;
 	margin-top: auto;
 	margin-bottom: auto;
-	background: #130455;
+	background: #3f0377;
 	position: relative;
 	display: flex;
 	justify-content: center;

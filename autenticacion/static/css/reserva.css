@@ -10,15 +10,15 @@
 }
 body {      
     margin: 110px;
-    background-image: url(../imgs/fondo.jpg);
-  }
-  h1 {
+    background-color: #789;
+}
+h1 {
     color: aliceblue;
     font-weight: 300;
     font-style: normal;
     text-align: left;
-  }
-  header{
+}
+header{
     position: fixed;
     top: 0;
     right: 0;
@@ -30,6 +30,7 @@ body {
     justify-content: space-between;
     background: transparent;
     transition: all ease .55s;
+    background-color: #2E958C;
 }
 
 .logo img{

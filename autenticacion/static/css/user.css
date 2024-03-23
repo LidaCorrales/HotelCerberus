@@ -10,8 +10,9 @@
 }
 
 body{
-    background: black;
-    color: azure;
+    margin: 40px;
+    background-image: url(../imgs/fondo1.jpg);
+    background-size: cover;
 }
 
 header{
@@ -26,6 +27,7 @@ header{
     justify-content: space-between;
     background: transparent;
     transition: all ease .55s;
+    background-color: #3f0377;
 }
 
 .navlist{
@@ -35,13 +37,13 @@ header{
 .navlist a{
     font-size: 15px;
     font-weight: 400;
-    color: bisque;
+    color: aliceblue;
     margin: 0 30px;
     transition: al ease .55s;
 }
 
 .navlist a:hover{
-    color: plum;
+    color: rgb(189, 95, 189);
 }
 
 .logo img{
@@ -66,7 +68,9 @@ header{
 .h-right a:hover{
     color: aliceblue;
 }
-
+span{
+ color: aliceblue;
+}
 #menu-icon{
     font-size: 37px;
     color: antiquewhite;
@@ -85,7 +89,7 @@ section{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: url(../imgs/fondo.jpg);
+    
     background-size: cover;
     background-position: center;
     gap: 30px;
@@ -99,9 +103,9 @@ section{
 
 .home-text span{
     padding: 11px 18px;
-    background: #d8bfd8;
+    background: #3f0377;
     border-radius: 10px;
-    color: black;
+    color: aliceblue;
     font-size: 15px;
     font-weight: 500;
     letter-spacing: 2px;
@@ -112,6 +116,7 @@ section{
     font-weight: 800;
     line-height: 1.3;
     margin: 22px 0;
+    color: #3f0377;
 }
 
 .home-text p{
@@ -119,7 +124,7 @@ section{
     max-width: 400px;
     font-size: 15px;
     font-weight: 400;
-    color: whitesmoke;
+    color: #3f0377;
     line-height: 30px;
     margin-bottom: 35px;
 }
@@ -127,8 +132,8 @@ section{
 .home-text i{
     height: 45px;
     width: 45px;
-    background: thistle;
-    color: black;
+    background: #3f0377;
+    color: aliceblue;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -140,7 +145,7 @@ section{
 }
 
 .home-text i:hover{
-    background: lightcoral;
+    background: rgb(189, 95, 189);
     color: whitesmoke;
     transform: scale(1.09);
 }
@@ -148,8 +153,8 @@ section{
 .btn{
     display: inline-block;
     padding: 15px 22px;
-    color: black;
-    background: thistle;
+    color: aliceblue;
+    background: #3f0377;
     border-radius: 15px;
     font-size: 16px;
     font-weight: 700;
@@ -160,9 +165,9 @@ section{
 }
 
 .btn:hover{
-    border: 1px solid thistle;
+    border: 4px solid rgb(0, 0, 0);
     background: transparent;
-    color: rgb(165, 157, 165);
+    color: rgb(41, 38, 41);
 }
 
 .btn22{
@@ -209,7 +214,7 @@ section{
 /* Servicios*/
 
 .servicio{
-    background-image: url(../imgs/fondo.jpg);
+   
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -217,7 +222,7 @@ section{
 }
 
 .titulo h2{
-    color: rgb(255, 255, 255);
+    color: #3f0377;
     font-size: 75px;
     width: 1130px;
     margin: 30px auto;
@@ -235,7 +240,7 @@ section{
     height: 365px;
     width: 335px;
     padding: 20px 35px;
-    background: thistle;
+    background: #3f0377;
     border-radius: 20px;
     margin: 15px;
     position: relative;
@@ -248,25 +253,25 @@ section{
     display: block;
     text-align: center;
     margin: 25px 0px;
-    color: rgb(0, 0, 0);
+    color: aliceblue;
 }
 
 h5{
-    color: black;
+    color: aliceblue;
     font-size: 23px;
     margin-bottom: 15px;
 }
 
 .res p{
-    color: black;
+    color: aliceblue;
     font-size: 16px;
     line-height: 27px;
     margin-bottom: 25px;
 }
 
 .card a{
-    background-color: palevioletred;
-    color: white;
+    background-color: aliceblue;
+    color: black;
     text-decoration: none;
     border: 2px solid transparent;
     font-weight: bold;
@@ -277,8 +282,8 @@ h5{
 
 .card a:hover{
     background-color: transparent;
-    color: black;
-    border: 2px solid #032203;
+    color: aliceblue;
+    border: 4px solid rgb(189, 95, 189);
     cursor: pointer;
 }
 
@@ -384,4 +389,23 @@ h5{
         width: 400px;
         margin: 10px auto;
     }
+}
+/*Admin*/
+.btn22{
+    display: inline-block;
+    padding: 15px 22px;
+    color: aliceblue;
+    background: #3f0377;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    word-spacing: 5px;
+    transition: all ease .55s;  
+}
+.btn22:hover{
+    border: 4px solid rgb(0, 0, 0);
+    background: transparent;
+    color: rgb(41, 38, 41);
 }

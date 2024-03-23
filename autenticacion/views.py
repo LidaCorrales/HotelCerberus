@@ -4,14 +4,15 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth import logout
 
 from .decorators import admin_only, autorizados_user, autorizacion_login_user
+from django.http import FileResponse
 
 from django.contrib.auth import authenticate, login, logout
 from .forms import CustomUserCreationForm, ActualizacionForm
 from .decorators import untenticado_user, cache_not
 from django.contrib.auth.models import Group
 
-from .forms import CustomUserCreationForm
-from .models import tipoDocumento, CustomUser
+from .forms import CustomUserCreationForm, PDFFileForm
+from .models import tipoDocumento, CustomUser, ArchivoPDF
 from Aplicaciones.Habitaciones.models import Habitaciones, tipoHabitaciones
 
 @cache_not
@@ -118,7 +119,8 @@ def logoutUser(request):
 @cache_not   
 @autorizados_user(autorizados_user=['admin'])    
 def pageadmin(request):
-        return render(request,'Administrador/admin.html')
+    pdf_tecnico = ArchivoPDF.objects.filter(title="Manual_Tecnico_HotelCerberus").first()    
+    return render(request,'Administrador/admin.html', {'pdf_tecnico': pdf_tecnico})
     
 #Views de paginas del usuario
 @cache_not
@@ -149,7 +151,6 @@ def pageusuZH(request):
     return render(request, 'usuario/zonas_humedas.html')
 
 @cache_not
-@autorizacion_login_user
 def pageusuHabitaciones(request):
     return render(request, 'usuario/habitacion.html')
 
@@ -169,3 +170,23 @@ def HabitacionesE(request):
 @autorizacion_login_user
 def ServiciosEmpleado(request):
     return render(request,'empleado/pagoServicios.html')
+
+#---------------PDF ADMIN--------------------
+
+@cache_not
+@admin_only
+def upload_pdf(request):
+    if request.method == 'POST':
+        form = PDFFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('paginadmin')
+    else:
+        form = PDFFileForm()
+    return render(request, 'administrador/PDFadmin.html', {'form': form})
+
+
+def descargarPDF(request, pk):
+    pdf_file = ArchivoPDF.objects.get(pk=pk)
+    return FileResponse(pdf_file.file.open(), as_attachment=True, filename=pdf_file.file.name)
+

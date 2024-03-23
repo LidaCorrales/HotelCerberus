@@ -16,95 +16,99 @@
 </head>
 <body>
     <header>
-        <a href={% url 'paginausu' %} class="logo">
+        <a href="/" class="logo">
             <img src={% static 'imgs/logo.png' %}>
         </a>
 
        <h1>Restaurante</h1>
     
         <ul class="navlist">
-            <li><a href={% url 'paginausu' %}>Inicio</a></li>
+            <li><a href="/">Inicio</a></li>
            
         </ul>
-</header>
-<div class="container">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 158px; width:800px; margin-left:-350px; border: 2px solid white;">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <img src={% static 'imgs/meat.jpg' %} alt="Los Angeles" style="width:100%;">
+    </header>
+<! -- Vista Carnes  --!>
+<div style="display: flex; justify-content: center; align-items: start;">
+<div class="cont" style=" margin-top: 200px;">
+  <!-- Carrucel -->
+  <div class="carousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:800px;  border: 2px solid white; ">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src={% static 'imgs/meat.jpg' %} alt="Los Angeles" style="width:100%;">
+        </div>
+  
+        <div class="item">
+          <img src={% static 'imgs/ricardo.jpg' %} alt="Chicago" style="width:100%;">
+        </div>
+      
+        <div class="item">
+          <img src={% static 'imgs/rest.jpg' %} alt="New york" style="width:100%;">
+        </div>
       </div>
-
-      <div class="item">
-        <img src={% static 'imgs/ricardo.jpg' %} alt="Chicago" style="width:100%;">
-      </div>
-    
-      <div class="item">
-        <img src={% static 'imgs/rest.jpg' %} alt="New york" style="width:100%;">
-      </div>
+      
     </div>
-    
+
   </div>
-</div>
-<br>
-<div class="catalogo_carnes">
-    <div class="container">
-        <h1>Carta de Carnes</h1>
-        <div class="menu-item">
-            <h2>Res a la Parrilla</h2>
-            <p>Tira magro de res, marinada en especias y a la parrilla.</p>
-            <p>Precio: $250</p>
-        </div>
-        <div class="menu-item">
-            
-            <h2>Lomo a la Parrilla</h2>
-            <p>Lomo de cerdo, marinado en especias y a la parrilla.</p>
-            <p>Precio: $200</p>
-        </div>
-        <div class="menu-item">
-            
-            <h2>Chuletas a la Parrilla</h2>
-            <p>Chuletas de cerdo, marinadas en especias y a la parrilla.</p>
-            <p>Precio: $150</p>
-        </div>
-        <div class="menu-item">
-            
-            <h2>Pescado al Horno</h2>
-            <p>Pescado al horno, con especias y acompañado de papas.</p>
-            <p>Precio: $180</p>
-        </div>
-        <div class="menu-item">
-            
-            <h2>Pollo a la Parrilla</h2>
-            <p>Pollo marinado en especias y a la parrilla.</p>
-            <p>Precio: $120</p>
-        </div>
-        <div class="menu-item">
-            
-            <h2>Pastel de Carne</h2>
-            <p>Pastel de carne, con papas y verduras.</p>
-            <p>Precio: $100</p>
-        </div>
+  <!-- Menú -->
+  <div class="catalogo_carnes" style="margin-left: 1000px; margin-top: -550px;">
+    <div class="menu">
+    <h1>Carta de Carnes</h1>
+  </div>
+    <div class="menu-item">
+        <h2>Res a la Parrilla</h2>
+        <p>Tira magro de res, marinada en especias y a la parrilla.</p>
+        <p>Precio: $250</p>
+    </div>
+    <div class="menu-item">
+        
+        <h2>Lomo a la Parrilla</h2>
+        <p>Lomo de cerdo, marinado en especias y a la parrilla.</p>
+        <p>Precio: $200</p>
+    </div>
+    <div class="menu-item">
+        
+        <h2>Chuletas a la Parrilla</h2>
+        <p>Chuletas de cerdo, marinadas en especias y a la parrilla.</p>
+        <p>Precio: $150</p>
+    </div>
+    <div class="menu-item">
+        
+        <h2>Pescado al Horno</h2>
+        <p>Pescado al horno, con especias y acompañado de papas.</p>
+        <p>Precio: $180</p>
+    </div>
+    <div class="menu-item">
+        
+        <h2>Pollo a la Parrilla</h2>
+        <p>Pollo marinado en especias y a la parrilla.</p>
+        <p>Precio: $120</p>
+    </div>
+    <div class="menu-item">
+        
+        <h2>Pastel de Carne</h2>
+        <p>Pastel de carne, con papas y verduras.</p>
+        <p>Precio: $100</p>
+      </div>
     </div>
 </div>
-
-<div class="container">
-    <div id="myCarouse2" class="carousel slide" data-ride="carousel" style="margin-top: 158px; width:800px; margin-left:650px; border: 2px solid white;">
-      <!-- Indicators -->
+</div>
+<!-- Vista Bebidas -->
+<div style="display: flex; justify-content: center; align-items: start;">
+<div class="cont" style=" margin-top: 50px; ">
+  <!-- Carousel -->
+  <div class="carousel">
+    <div id="myCarouse2" class="carousel slide" data-ride="carousel" style="margin-top: 1px; width:800px; margin-left:558.5px; border: 2px solid white;">
       <ol class="carousel-indicators">
         <li data-target="#myCarouse2" data-slide-to="0" class="active"></li>
         <li data-target="#myCarouse2" data-slide-to="1"></li>
         <li data-target="#myCarouse2" data-slide-to="2"></li>
       </ol>
-  
-      <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
           <img src={% static 'imgs/soda.jpg' %} alt="Los Angeles" style="width:100%;">
@@ -118,10 +122,13 @@
           <img src={% static 'imgs/drinki.jpg' %} alt="New york" style="width:100%;">
         </div>
       </div>
-    </div>
-  <div class="catalogo_bebidas">
+  </div>
+  <!-- Menú -->
+  <div class="catalogo_bebidas" style="margin-top: -550px; margin-left:-180px;">
     <div class="container">
+      <div class="menu">
         <h1>Carta de Bebidas</h1>
+      </div>        
         <div class="menu-item">
             <h2>Vino Tinto</h2>
             <p>Vino tinto de la región, perfecto para acompañar tus platos de carne a la parrilla.</p>
@@ -154,18 +161,21 @@
             <p>Precio: $40</p>
         </div>
     </div>
+  </div>
+</div>
 </div>
 
-<div class="container">
-    <div id="myCarouse3" class="carousel slide" data-ride="carousel" style="margin-top: 158px; width:800px; margin-left:-350px; border: 2px solid white;">
-      <!-- Indicators -->
+<!-- Vista Postres -->
+<div style="display: flex; justify-content: center; align-items: start;">
+  <div class="cont" style="margin-top: 850px;  margin-left: -1360px; width: 1360px;">
+<!-- Carrucel -->
+<div class="carousel">
+  <div id="myCarouse3" class="carousel slide" data-ride="carousel" style="margin-top: -1px; width:800px; margin-left:1px; border: 2px solid white;">
       <ol class="carousel-indicators">
         <li data-target="#myCarouse3" data-slide-to="0" class="active"></li>
         <li data-target="#myCarouse3" data-slide-to="1"></li>
         <li data-target="#myCarouse3" data-slide-to="2"></li>
       </ol>
-  
-      <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
           <img src={% static 'imgs/beat.jpg' %} alt="Los Angeles" style="width:100%;">
@@ -179,47 +189,49 @@
           <img src={% static 'imgs/side.jpg' %} alt="New york" style="width:100%;">
         </div>
       </div>
-    </div>
-    <div class="catalogo_postres">
-        <div class="container">
-            <h1>Carta de Postres</h1>
-            <div class="menu-item">
-                <h2>Snickerdoodle Blondies</h2>
-                <p>Deliciosos blondies de canela y azúcar, con un toque crujiente y una textura perfecta.</p>
-                <p>Precio: $100</p>
-            </div>
-            <div class="menu-item">
-                
-                <h2>Pastel de Cereza</h2>
-                <p>Suave bizcocho de cereza con un relleno cremoso de crema y cerezas.</p>
-                <p>Precio: $120</p>
-            </div>
-            <div class="menu-item">
-                
-                <h2>Cheesecake de Limón y Arándanos</h2>
-                <p>Cheesecake cremoso y suave con un delicioso sabor a limón y arándanos.</p>
-                <p>Precio: $150</p>
-            </div>
-            <div class="menu-item">
-                
-                <h2>Tiramisú</h2>
-                <p>Delicioso postre italiano con capas de bizcocho empapado en café y crema de mascarpone.</p>
-                <p>Precio: $180</p>
-            </div>
-            <div class="menu-item">
-                
-                <h2>Brownie de Chocolate</h2>
-                <p>Delicioso brownie de chocolate, húmedo y con un intenso sabor a chocolate.</p>
-                <p>Precio: $120</p>
-            </div>
-            <div class="menu-item">
-                
-                <h2>Tarta de Manzana</h2>
-                <p>Clásica tarta de manzana, crujiente y deliciosa, con un relleno dulce y jugoso.</p>
-                <p>Precio: $140</p>
-            </div>
-        </div>
-     </div>
-     
+</div>
+<!-- Menú -->
+<div class="catlogo_postres" style="margin-left:900px; margin-top:-550px; margin-left: 880px;">
+  <div class="menu">
+  <h1>Carta de Postres</h1>
+</div>
+  <div class="menu-item">
+      <h2>Snickerdoodle Blondies</h2>
+      <p>Deliciosos blondies de canela y azúcar, con un toque crujiente y una textura perfecta.</p>
+      <p>Precio: $100</p>
+  </div>
+  <div class="menu-item">
+      
+      <h2>Pastel de Cereza</h2>
+      <p>Suave bizcocho de cereza con un relleno cremoso de crema y cerezas.</p>
+      <p>Precio: $120</p>
+  </div>
+  <div class="menu-item">
+      
+      <h2>Cheesecake de Limón y Arándanos</h2>
+      <p>Cheesecake cremoso y suave con un delicioso sabor a limón y arándanos.</p>
+      <p>Precio: $150</p>
+  </div>
+  <div class="menu-item">
+      
+      <h2>Tiramisú</h2>
+      <p>Delicioso postre italiano con capas de bizcocho empapado en café y crema de mascarpone.</p>
+      <p>Precio: $180</p>
+  </div>
+  <div class="menu-item">
+      
+      <h2>Brownie de Chocolate</h2>
+      <p>Delicioso brownie de chocolate, húmedo y con un intenso sabor a chocolate.</p>
+      <p>Precio: $120</p>
+  </div>
+  <div class="menu-item">
+      
+      <h2>Tarta de Manzana</h2>
+      <p>Clásica tarta de manzana, crujiente y deliciosa, con un relleno dulce y jugoso.</p>
+      <p>Precio: $140</p>
+  </div>
+</div>
+</div>
+</div>
 </body>
 </html>

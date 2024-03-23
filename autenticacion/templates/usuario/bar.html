@@ -15,60 +15,60 @@
 </head>
 <body>
   <header>
-    <a href={% url 'paginausu' %} class="logo">
+    <a href="/" class="logo">
         <img src={% static 'imgs/logo.png' %}>
     </a>
 
     <center><h1>Bar</h1></center>
 
     <ul class="navlist">
-        <li><a href={% url 'paginausu' %}>Inicio</a></li>
+        <li><a href="/">Inicio</a></li>
        
     </ul>
 
 </header>
-<br>
-<div class="container">
+<!-- Vista Cervezas -->
+<div style="display: flex; justify-content: center; align-items: start;">
+<div class="cont" style=" margin-top: 150px;">
+  <!-- Carrucel -->
+  <div class="carousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" style=" width:800px; border: 2px solid white;">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
   
-  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 150px; width:800px; margin-left:-350px; border: 2px solid white;">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-
-      <div class="item active">
-        <img src={% static 'imgs/glass.jpg' %}  style="width:100%;">
-        <div class="carousel-caption">
+        <div class="item active">
+          <img src={% static 'imgs/glass.jpg' %}  style="width:100%;">
+          <div class="carousel-caption">  
+            
+          </div>
+        </div>
+  
+        <div class="item">
+          <img src={% static 'imgs/drink.jpg' %}  style="width:100%;">
+          <div class="carousel-caption">
           
+          </div>
         </div>
-      </div>
-
-      <div class="item">
-        <img src={% static 'imgs/drink.jpg' %}  style="width:100%;">
-        <div class="carousel-caption">
-        
+      
+        <div class="item">
+          <img src={% static 'imgs/vino.jpg' %} style="width:100%;">
+          <div class="carousel-caption">
+            
+          </div>
         </div>
-      </div>
     
-      <div class="item">
-        <img src={% static 'imgs/vino.jpg' %} style="width:100%;">
-        <div class="carousel-caption">
-          
-        </div>
       </div>
-  
     </div>
   </div>
-</div>
-
-<div class="catalogo_cervezas">
-  <br>
-  <h1>Catálogo de Cervezas</h1>
+  <!-- Menú -->
+  <div class="catalogo_cervezas" style="margin-left: 850px; margin-top:-550px;">
+    <div class="menu">
+    <h1>Catálogo de Cervezas</h1>
+  </div>
   <div class="menu-item">
     <h2>Cerveza Artesanal 1</h2>
     <p>Descripción de la Cerveza Artesanal 1. Una cerveza artesanal de alta calidad, elaborada con ingredientes naturales y procesos tradicionales.</p>
@@ -99,48 +99,53 @@
     <p>Descripción de la Cerveza de Frutas 1. Una cerveza de frutas refrescante y jugosa, con notas de frutas tropicales.</p>
     <p>Precio: $95</p>
   </div>
-</div>
-
-
-<div class="container">
-  
-  <div id="myCarouse2" class="carousel slide" data-ride="carousel" style="margin-top: 250px; width:800px; margin-left:650px; border: 2px solid white;">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarouse2" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarouse2" data-slide-to="1"></li>
-      <li data-target="#myCarouse2" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-
-      <div class="item active">
-        <img src={% static 'imgs/pot.jpg' %}  style="width:100%;">
-        <div class="carousel-caption">
-          
-        </div>
-      </div>
-
-      <div class="item">
-        <img src={% static 'imgs/wh.jpg' %}  style="width:100%;">
-        <div class="carousel-caption">
-        
-        </div>
-      </div>
-    
-      <div class="item">
-        <img src={% static 'imgs/engin.jpg' %} style="width:100%;">
-        <div class="carousel-caption">
-          
-        </div>
-      </div>
-  
-    </div>
   </div>
-  <div class="catalogo_vinos_whisky">
-    <br>
+</div>
+</div>
+<!-- Vista Vinos y Whiskys -->
+<div style="display: flex; justify-content: center; align-items: start;">
+<div class="cont" style=" margin-top: 200px;">
+  <!-- Carrucel -->
+  <div class="carousel">
+    <div id="myCarouse2" class="carousel slide" data-ride="carousel" style=" width:800px; margin-left:930px; border: 2px solid white;">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarouse2" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarouse2" data-slide-to="1"></li>
+        <li data-target="#myCarouse2" data-slide-to="2"></li>
+      </ol>
+  
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+  
+        <div class="item active">
+          <img src={% static 'imgs/pot.jpg' %}  style="width:100%;">
+          <div class="carousel-caption">
+            
+          </div>
+        </div>
+  
+        <div class="item">
+          <img src={% static 'imgs/wh.jpg' %}  style="width:100%;">
+          <div class="carousel-caption">
+          
+          </div>
+        </div>
+      
+        <div class="item">
+          <img src={% static 'imgs/engin.jpg' %} style="width:100%;">
+          <div class="carousel-caption">
+            
+          </div>
+        </div>
+    
+      </div>
+  </div>
+  <!-- Menñu -->
+  <div class="catalogo_vinos_whisky" style="margin-left:2px; margin-top: -550px;">
+    <div class="menu">
     <h1>Catálogo de Vinos y Whisky</h1>
+  </div>
     <div class="menu-item">
       <h2>Vino Tinto Reserva 1</h2>
       <p>Descripción del Vino Tinto Reserva 1. Un vino tinto de reserva con cuerpo, equilibrado y con aromas a frutas maduras.</p>
@@ -172,7 +177,7 @@
       <p>Precio: $180</p>
     </div>
   </div>
-  
+</div>
 </div>
 </body>
 </html>

@@ -25,7 +25,7 @@
                         {% csrf_token %}
 						<div class="input-group mb-3">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class='fas fa-user-plus'></i></span>
+								<span class="input-group-text" required><i class='fas fa-user-plus'></i></span>
 							</div>
 							{{form.username}}
 						</div>
@@ -33,7 +33,7 @@
 							<div class="input-group-prepend">
 								<label class="input-group-text" for="inputGroupSelect01">Tipo de documento</label>
 							</div>
-							<select class="custom-select" id="inputGroupSelect01" name="idTipo">
+							<select class="custom-select" id="inputGroupSelect01" name="idTipo" required>
 								<option selected>Seleccione</option>
         						{% for tipo_doc in tipos_documento %}
             						<option value="{{tipo_doc.idTipo}}">{{tipo_doc.documento}}</option>
@@ -42,43 +42,43 @@
 						</div>	
 						<div class="input-group mb-3">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fa-solid fa-id-card"></i></span>
+								<span class="input-group-text" required><i class="fa-solid fa-id-card"></i></span>
 							</div>
 							{{form.numdoc}}
 						</div>
 						<div class="input-group mb-3">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fa-solid fa-signature"></i></span>
+								<span class="input-group-text" required><i class="fa-solid fa-signature"></i></span>
 							</div>
 							{{form.first_name}}
 						</div>
 						<div class="input-group mb-3">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fa-regular fa-face-smile"></i></span>
+								<span class="input-group-text" required><i class="fa-regular fa-face-smile"></i></span>
 							</div>
 							{{form.last_name}}
 						</div>
 						<div class="input-group mb-3">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fa-regular fa-envelope"></i></span>
+								<span class="input-group-text" required><i class="fa-regular fa-envelope"></i></span>
 							</div>
 							{{form.email}}
 						</div>
 						<div class="input-group mb-3">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
+								<span class="input-group-text" required><i class="fa-solid fa-phone"></i></span>
 							</div>
 							{{form.telefono}}
 						</div>
 						<div class="input-group mb-3">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
+								<span class="input-group-text" required><i class="fas fa-key"></i></span>
 							</div>
 							{{form.password1}}
 						</div>
 						<div class="input-group mb-3">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
+								<span class="input-group-text" required><i class="fas fa-key"></i></span>
 							</div>
 							{{form.password2}}
 						</div>

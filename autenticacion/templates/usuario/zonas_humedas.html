@@ -14,20 +14,23 @@
       <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <a href={% url 'paginausu' %} class="logo">
-            <img src={% static 'imgs/logo.png' %}>
-        </a>
+      <header >
+          <a href="/" class="logo">
+              <img src={% static 'imgs/logo.png' %}>
+          </a>
 
-        <center><h1>Zonas Húmedas</h1></center>
-        <ul class="navlist">
-            <li><a href={% url 'paginausu' %}>Inicio</a></li>
-           
-        </ul>
-    </header>
-
-    <div class="container">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 150px; width:800px; margin-left:650px; border: 2px solid white;">
+          <center><h1>Zonas Húmedas</h1></center>
+          <ul class="navlist">
+              <li><a href="/">Inicio</a></li>
+            
+          </ul>
+      </header>
+    <! -- Vista Spa  --!>
+    <div style="display: flex; justify-content: center; align-items: start;">
+    <div class="cont" style=" width:90%; margin-top:150px;">
+      <! -- carrucel  --!>
+      <div class="carousel">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" style=" width:800px;  border: 2px solid white;">
           <!-- Indicators -->
           <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -61,20 +64,26 @@
         
           </div>
         </div>
-      </div>
-      <div class="desc1">
-        <h2>Spa</h2>
-        <p>Sumérgete en un mundo de indulgencia y rejuvenecimiento en nuestro exclusivo spa. 
-        <p>Déjate llevar por la calma de nuestro espacio diseñado para relajar todos tus sentidos.</p> 
-        <p>Disfruta de una amplia gama de tratamientos que van desde masajes revitalizantes y </p>
-        <p>hasta envolturas corporales nutritivas.</p>
-        <p>Con una atmósfera serena y atención personalizada, </p>
-        <p>nuestro spa te ofrece una experiencia inolvidable de cuidado y renovación.</p>
-      </div>
-
-      <div class="container">
-  
-        <div id="myCarouse2" class="carousel slide" data-ride="carousel" style="margin-top: 150px; width:800px; margin-left:-330px; border: 2px solid white;">
+    </div>
+    <! -- Descripción  --!>
+    <div class="desc1" style="margin-left:850px; margin-top:-380px;">
+      <h2>Spa</h2>
+      <p>Sumérgete en un mundo de indulgencia y rejuvenecimiento en nuestro exclusivo spa. 
+      <p>Déjate llevar por la calma de nuestro espacio diseñado para relajar todos tus sentidos.</p> 
+      <p>Disfruta de una amplia gama de tratamientos que van desde masajes revitalizantes y </p>
+      <p>hasta envolturas corporales nutritivas.</p>
+      <p>Con una atmósfera serena y atención personalizada, </p>
+      <p>nuestro spa te ofrece una experiencia inolvidable de cuidado y renovación.</p>
+    </div>
+    </div>
+    </div>
+  </div>
+    <! -- Vista Piscina  --!>
+    <div style="display: flex; justify-content: center; align-items: start;">
+    <div class="cont" style="width:90%; margin-top:300px;">
+      <! -- carrucel  --!>
+      <div class="carousel">
+        <div id="myCarouse2" class="carousel slide" data-ride="carousel" style=" width:800px; border: 2px solid white; margin-left: 800px;">
           <!-- Indicators -->
           <ol class="carousel-indicators">
             <li data-target="#myCarouse2" data-slide-to="0" class="active"></li>
@@ -108,101 +117,121 @@
         
           </div>
         </div>
-      </div>
-      <div class="desc2">
-        <h2>Piscina</h2>
-        <p>Disfruta de un refrescante chapuzón en aguas cristalinas rodeadas de exuberante vegetación y elegantes instalaciones.</p>
-        <p>Nuestra piscina es el lugar perfecto para relajarte al sol en cómodas tumbonas o refrescarte con un revitalizante baño.</p>
-        <p>Con un ambiente relajado y acogedor, nuestra piscina es el escenario ideal para crear recuerdos inolvidables con amigos y familiares.</p>
+    </div>
+    <! -- Descripción  --!>
+    <div class="desc2" style="margin-left:2px; margin-top: -350px;">
+      <h2>Piscina</h2>
+      <p>Disfruta de un refrescante chapuzón en aguas cristalinas rodeadas de exuberante vegetación y elegantes instalaciones.</p>
+      <p>Nuestra piscina es el lugar perfecto para relajarte al sol en cómodas tumbonas o refrescarte con un revitalizante baño.</p>
+      <p>Con un ambiente relajado y acogedor, nuestra piscina es el escenario ideal para crear recuerdos inolvidables con amigos y </p>
+      <p>familiares.</p>
+    </div>
+    </div>
+    </div>
+  </div>
+    <! -- Vista Jacuzzi --!>
+    <div style="display: flex; justify-content: center; align-items: start;">
+      <div class="cont" style=" width:90%; margin-top:280px;">
+        <! -- carrucel  --!>
+        <div class="carousel">
+          <div id="myCarouse3" class="carousel slide" data-ride="carousel" style=" width:800px;  border: 2px solid white;">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarouse3" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarouse3" data-slide-to="1"></li>
+              <li data-target="#myCarouse3" data-slide-to="2"></li>
+            </ol>
         
-      </div>
-
-      <div class="container">
-        <div id="myCarouse3" class="carousel slide" data-ride="carousel" style="margin-top: 150px; width:800px; margin-left:650px; border: 2px solid white;">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#myCarouse3" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarouse3" data-slide-to="1"></li>
-            <li data-target="#myCarouse3" data-slide-to="2"></li>
-          </ol>
-      
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-      
-            <div class="item active">
-              <img src={% static 'imgs/ja1.jpg' %}  style="width:100%;">
-              <div class="carousel-caption">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+        
+              <div class="item active">
+                <img src={% static 'imgs/ja1.jpg' %}  style="width:100%;">
+                <div class="carousel-caption">
+                  
+                </div>
+              </div>
+        
+              <div class="item">
+                <img src={% static 'imgs/ja2.jpg' %}  style="width:100%;">
+                <div class="carousel-caption">
                 
+                </div>
               </div>
-            </div>
-      
-            <div class="item">
-              <img src={% static 'imgs/ja2.jpg' %}  style="width:100%;">
-              <div class="carousel-caption">
-              
+            
+              <div class="item">
+                <img src={% static 'imgs/ja3.jpg' %} style="width:100%;">
+                <div class="carousel-caption">
+                  
+                </div>
               </div>
-            </div>
           
-            <div class="item">
-              <img src={% static 'imgs/ja3.jpg' %} style="width:100%;">
-              <div class="carousel-caption">
-                
-              </div>
             </div>
-        
           </div>
-        </div>
       </div>
-      <div class="desc3">
+      <! -- Descripción  --!>
+      <div class="desc3" style="margin-left: 850px; margin-top: -350px;">
         <h2>Jacuzzi</h2>
         <p>Déjate llevar por la sensación de burbujas de agua caliente que acarician tu cuerpo, aliviando tensiones y revitalizando tus sentidos. </p>
         <p>on su diseño elegante y jets de hidromasaje estratégicamente ubicados, nuestro jacuzzi te ofrece una experiencia de relajación incomparable.</p>
         <p>Disfruta de momentos de intimidad y conexión con tus seres queridos mientras te sumerges en el lujo de nuestro jacuzzi.</p>
         
       </div>
-      
-      <div class="container">
-        <div id="myCarouse4" class="carousel slide" data-ride="carousel" style="margin-top: 150px; width:800px; margin-left:-330px; border: 2px solid white;">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#myCarouse4" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarouse4" data-slide-to="1"></li>
-            <li data-target="#myCarouse4" data-slide-to="2"></li>
-          </ol>
-      
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-      
-            <div class="item active">
-              <img src={% static 'imgs/sa1.jpg' %}  style="width:100%;">
-              <div class="carousel-caption">
+      </div>
+    </div>
+  </div>
+    <! -- Vista Sauna  --!>
+    <div style="display: flex; justify-content: center; align-items: start;">
+      <div class="cont" style=" width:90%; margin-top:300px;">
+        <! -- carrucel  --!>
+        <div class="carousel">
+          <div id="myCarouse4" class="carousel slide" data-ride="carousel" style=" width:800px;  border: 2px solid white; margin-left:800px;">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarouse4" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarouse4" data-slide-to="1"></li>
+              <li data-target="#myCarouse4" data-slide-to="2"></li>
+            </ol>
+        
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+        
+              <div class="item active">
+                <img src={% static 'imgs/sa1.jpg' %}  style="width:100%;">
+                <div class="carousel-caption">
+                  
+                </div>
+              </div>
+        
+              <div class="item">
+                <img src={% static 'imgs/sa2.jpg' %}  style="width:100%;">
+                <div class="carousel-caption">
                 
+                </div>
               </div>
-            </div>
-      
-            <div class="item">
-              <img src={% static 'imgs/sa2.jpg' %}  style="width:100%;">
-              <div class="carousel-caption">
-              
+            
+              <div class="item">
+                <img src={% static 'imgs/sa3.jpg' %} style="width:100%;">
+                <div class="carousel-caption">
+                  
+                </div>
               </div>
-            </div>
           
-            <div class="item">
-              <img src={% static 'imgs/sa3.jpg' %} style="width:100%;">
-              <div class="carousel-caption">
-                
-              </div>
             </div>
-        
           </div>
-        </div>
       </div>
-      <div class="desc4">
+      <! -- Descripción  --!>
+      <div class="desc4" style="margin-top: -350px;">
         <h2>Sauna</h2>
-        <p>Sumérgete en un ambiente cálido y reconfortante que te ayudará a liberar toxinas, aliviar tensiones musculares y mejorar la circulación sanguínea.</p>
-        <p>Con sus elegantes bancos de madera y aromas relajantes, nuestro sauna te invita a disfrutar de momentos de relajación y renovación.</p>
-        <p>Experimenta la tranquilidad y el bienestar en nuestro exclusivo sauna, donde el estrés se desvanece y la calma prevalece.</p>
-        
+        <p>Sumérgete en un ambiente cálido y reconfortante que te ayudará a liberar toxinas, </p>
+        <p>aliviar tensiones musculares y mejorar la circulación sanguínea.</p>
+        <p>Con sus elegantes bancos de madera y aromas relajantes, </p>
+        <p>nuestro sauna te invita a disfrutar de momentos de relajación y renovación.</p>
+        <p>Experimenta la tranquilidad y el bienestar en nuestro exclusivo sauna, </p>
+        <p>donde el estrés se desvanece y la calma prevalece.</p>
       </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

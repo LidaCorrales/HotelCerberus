@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel</title>
-    <link rel="stylesheet" type="text/css" href={% static 'css/index.css' %}>
+    <link rel="stylesheet" type="text/css" href={% static 'css/user.css' %}>
     <link rel="icon" type="image/jpg" href="{% static 'imgs/logo.png' %}">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
@@ -27,7 +27,11 @@
         </ul>
 
         <div class="h-right">
-            <a href="#">Contactenos</a>
+            {% if pdf_usuario %}
+                <a href="{% url 'descargarPDF' pdf_usuario.pk %}">{{ pdf_usuario.title }}</a>
+            {% else %}
+                <p>El manual de usuario no está disponible en este momento.</p>
+            {% endif %}
             <div class="bx bx-menu" id="menu-icon"></div>
         </div>
     </header>
@@ -53,7 +57,6 @@
 
             <div class="main-btnn">
                 <a href={% url 'HabitacionesUsuario' %} class="btn">¡Reserva Ahora!</a>
-                <a href="#" class="btn22">:D</a>
             </div>
         </div>
 

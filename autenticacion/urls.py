@@ -30,4 +30,8 @@ urlpatterns = [
     path('Empleados/',views.recepcionista, name='paginarecepcionista'),
     path('EmpleadosHab/',views.HabitacionesE, name='habitacionesE'),
     path('EmpleadosS/',views.ServiciosEmpleado, name='PagoServiciosEmpleado'),
+
+    #---------PDF admin ------------
+    path('UploadPDF/', views.upload_pdf, name='subiendoPDF'),
+    path('descargarPDF/<int:pk>/',views.descargarPDF,name='descargarPDF')
 ]
