@@ -10,7 +10,7 @@
 }
 body {      
     margin: 110px;
-    background-color: #789;
+    background-image: url(../imgs/vecteezy_abstract-white-line-background-wall-vector-illustration_7696726.jpg);
   }
   h1 {
     color: aliceblue;
@@ -30,7 +30,7 @@ body {
     justify-content: space-between;
     background: transparent;
     transition: all ease .55s;
-    background-color: #2E958C;
+    background-color: #3f0377;
 }
 
 .logo img{
@@ -56,5 +56,5 @@ h1 {
 }
 .Reservar{
     color: aliceblue;
-    background-color: #130455;
+    background-color: #3f0377;
 }
