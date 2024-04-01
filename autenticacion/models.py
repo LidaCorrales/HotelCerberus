@@ -8,7 +8,7 @@ class tipoDocumento(models.Model):
 class CustomUser(AbstractUser):
     idTipo = models.ForeignKey(tipoDocumento, on_delete=models.CASCADE, null=True, default=None)
     numdoc = models.IntegerField(null=True, default=None)
-    telefono = models.IntegerField(null=True, default=None)
+    telefono = models.BigIntegerField(null=True, default=None)
     
     Activo = 'Activo'
     Inactivo = 'Inactivo'

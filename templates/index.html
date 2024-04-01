@@ -41,6 +41,10 @@
         <button id="cookieConsentButton" class="cookie-consent-btn">Aceptar</button>
     </div>
     <!--- section -->
+    <br>
+    <br>
+    <br>
+    <br>
     <section class="home">
         <div class="home-text">
             <span>Hotel Cerberus</span>
@@ -71,50 +75,49 @@
     </div>
 
         <!--Servicios-->
-        <div class="servicio">
-            <div class="titulo">
-                <h2>Servicios</h2>
+    <div class="servicio">
+        <div class="titulo">
+            <h2>Servicios</h2>
+        </div>
+        <div class="box">
+            <div class="card">
+                <i class="fa-solid fa-utensils"></i>
+                <h5>Restaurante</h5>
+                <div class="res">
+                    <p>Descubre la mejor gastronomia en nuestro restaurantes a precio muy conveniente.
+                    </p>
+                    <p style="text-align: center;">
+                        <a href={% url 'RestauranteUsuario' %}>Descubrir</a>
+                    </p>
+                </div>
             </div>
-            <div class="box">
-                <div class="card">
-                    <i class="fa-solid fa-utensils"></i>
-                    <h5>Restaurante</h5>
-                    <div class="res">
-                        <p>Descubre la mejor gastronomia en nuestro restaurantes a precio muy conveniente.
-                        </p>
-                        <p style="text-align: center;">
-                            <a href={% url 'RestauranteUsuario' %}>Descubrir</a>
-                        </p>
-                    </div>
-                </div>
     
-                <div class="card">
-                    <i class="fa-solid fa-wine-bottle"></i>
-                    <h5>Bar</h5>
-                    <div class="res">
-                        <p>Bebidas para todo momento y ocasión al alcance de su mano. <br>
-                            Acompañe sus comidas todo incluido.
-                        </p>
-                        <p style="text-align: center;">
-                            <a href={% url 'BarUsuario' %}>Descubrir</a>
-                        </p>
-                    </div>
+            <div class="card">
+                <i class="fa-solid fa-wine-bottle"></i>
+                <h5>Bar</h5>
+                <div class="res">
+                    <p>Bebidas para todo momento y ocasión al alcance de su mano. <br>
+                        Acompañe sus comidas todo incluido.
+                    </p>
+                    <p style="text-align: center;">
+                        <a href={% url 'BarUsuario' %}>Descubrir</a>
+                    </p>
                 </div>
+            </div>
     
-                <div class="card">
-                    <i class="fa-solid fa-spa"></i>
-                    <h5>SPA</h5>
-                    <div class="res">
-                        <p>Descubre nuestras zonas humedas para todos los visitantes. <br>
-                            Aplica terminos y condiciones*
-                        <p style="text-align: center;">
-                            <a href={% url 'ZonasHumedasUsuario' %}>Descubrir</a>
-                        </p>
-                    </div>
+            <div class="card">
+                <i class="fa-solid fa-spa"></i>
+                <h5>SPA</h5>
+                <div class="res">
+                    <p>Descubre nuestras zonas humedas para todos los visitantes. <br>
+                        Aplica terminos y condiciones*
+                    <p style="text-align: center;">
+                        <a href={% url 'ZonasHumedasUsuario' %}>Descubrir</a>
+                    </p>
                 </div>
             </div>
         </div>
-
+    </div>
     <script src="https://unpkg.com/scrollreveal"></script>
 </body>
 </html>

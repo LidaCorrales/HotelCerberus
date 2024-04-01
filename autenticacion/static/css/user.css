@@ -69,7 +69,7 @@ header{
     color: aliceblue;
 }
 span{
- color: aliceblue;
+    color: aliceblue;
 }
 #menu-icon{
     font-size: 37px;
@@ -285,6 +285,15 @@ h5{
     color: aliceblue;
     border: 4px solid rgb(189, 95, 189);
     cursor: pointer;
+}
+
+@media (max-width: 1820px){
+    header{
+        padding: 15px 7%;
+    }
+    section{
+        padding: 0 7%;
+    }
 }
 
 @media (max-width: 1610px){
