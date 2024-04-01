@@ -29,7 +29,7 @@
 
         <span> Bienvenido Administrador {{request.user}} :D</span>
 
-        <div class="h-right">
+        <!--<div class="h-right">
             <a href={% url 'subiendoPDF' %}>Crear PDF</a>
             {% if pdf_tecnico %}
                 <a href="{% url 'descargarPDF' pdf_tecnico.pk %}">{{ pdf_tecnico.title }}</a>
@@ -37,7 +37,7 @@
                 <p>El manual tecnico no está disponible en este momento.</p>
             {% endif %}
             <div class="bx bx-menu" id="menu-icon"></div>
-        </div>
+        </div> -->
     </header>
     <!--- section -->
     <br>
@@ -61,6 +61,8 @@
             <div class="main-btnn">
                 <a href={% url 'reservas' %} class="btn">Reservaciones</a>
                 <a href={% url 'facturaVista' %} class="btn22">Facturación</a>
+                <br>
+                <br>
                 <a href={% url 'DfacturaVista' %} class="btn22">Servicios Adicionales</a>
             </div>
         </div>
